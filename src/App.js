@@ -10,7 +10,10 @@ import {
 import { Start } from 'components/Start'
 import { Highscore} from 'components/Highscore'
 import { Task1 } from 'components/tasks/Task1'
+import { GameBoard } from 'components/GameBoard'
+import { EndGame } from "components/EndGame"
 import { game } from 'reducers/game'
+
 
 const reducer = combineReducers({game: game.reducer })
 const store = configureStore({reducer})
@@ -23,10 +26,16 @@ export const App = () => {
           <Route path="/" exact>
             <Start />
           </Route>
+          <Route path="/gameboard" exact>
+            <GameBoard />
+          </Route>
           <Route path="/task1" exact>
             <Task1 />
           </Route>
-          <Route path="/highscore">
+          <Route path="/endgame" exact>
+            <EndGame />
+          </Route>
+          <Route path="/highscore" exact>
             <Highscore />
           </Route>
         </Switch>
