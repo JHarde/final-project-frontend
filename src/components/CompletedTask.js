@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import {Container} from "components/StyledComponents"
 
-export const CompletedTask = ({isCorrect, answer, setAnswer, why}) => {
+export const CompletedTask = ({ isCorrect, answer, setAnswer, why }) => {
     console.log(isCorrect, answer)
     return (
         <Container>

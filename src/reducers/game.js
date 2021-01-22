@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    highscore: [
-        {username: "Sven", score: 3}
-    ],
+    highscore: [],
     questions: [],
     userScore: 0
 }
@@ -44,8 +42,7 @@ export const fetchHighscore = () => {
         })
 }}
 
-export const postHighscore = ({name, score}) => {
-    return (dispatch) => {
+export const postHighscore = (name, score) => {
         fetch("https://environmental-kids-game.herokuapp.com/highscore", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
@@ -55,4 +52,4 @@ export const postHighscore = ({name, score}) => {
         .then((res) => {
             console.log(res)
         })
-}}
+}

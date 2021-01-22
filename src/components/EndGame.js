@@ -3,16 +3,16 @@ import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 
 import { Container } from "components/StyledComponents"
-import { game, postHighscore } from 'reducers/game'
+import { fetchHighscore, postHighscore } from 'reducers/game'
 
 export const EndGame = () => {
 
     const dispatch = useDispatch()
     const userScore = useSelector(store => store.game.userScore)
     const [avatarName, setAvatarName] = useState("")
+
     const sendScore = () => {
         dispatch(postHighscore(avatarName, userScore))
-        // score: Number
     }
 
     return (
