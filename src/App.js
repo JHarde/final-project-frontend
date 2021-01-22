@@ -31,6 +31,9 @@ export const App = () => {
           <Route path="/task1" exact>
             <Task1 />
           </Route>
+          <Route path="/task2" exact>
+            <Task2 />
+          </Route>
           <Route path="/endgame" exact>
             <EndGame />
           </Route>
