@@ -1,14 +1,17 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
 
-import {Container} from "components/StyledComponents"
+import { Container } from "components/StyledComponents"
+import { game, postHighscore } from 'reducers/game'
 
 export const EndGame = () => {
 
+    const dispatch = useDispatch()
+    const userScore = useSelector(store => store.game.userScore)
     const [avatarName, setAvatarName] = useState("")
     const sendScore = () => {
-        //Skicka resultat och avatarName till redux/backend
-        // name: String
+        dispatch(postHighscore(avatarName, userScore))
         // score: Number
     }
 

@@ -9,6 +9,7 @@ import {
 import { Start } from 'components/Start'
 import { Highscore} from 'components/Highscore'
 import { Task1 } from 'components/tasks/Task1'
+import { Task2 } from 'components/tasks/Task2'
 import { GameBoard } from 'components/GameBoard'
 import { EndGame } from "components/EndGame"
 import { game } from 'reducers/game'
