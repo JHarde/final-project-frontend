@@ -11,6 +11,7 @@ export const Task1 = () => {
     const handleOnClick = (answer) => {
         (answer === 'Svar 1') ? setIsCorrect(true) : setIsCorrect(false)
         setAnswer(answer)
+        //Send answer to redux and/or backend
     }
     console.log(isCorrect)
 
@@ -23,7 +24,7 @@ export const Task1 = () => {
             <button onClick={() => handleOnClick('Svar 3')}>Svar 3</button>
         </Container>
         }
-        {answer && <CompletedTask isCorrect={isCorrect} answer={answer}/>}
+        {answer && <CompletedTask isCorrect={isCorrect} answer={answer} setAnswer={setAnswer}/>}
     </>
     )
 }

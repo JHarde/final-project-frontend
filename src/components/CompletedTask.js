@@ -3,18 +3,24 @@ import { Link } from 'react-router-dom'
 
 import {Container} from "components/StyledComponents"
 
-export const CompletedTask = ({isCorrect, answer}) => {
+export const CompletedTask = ({isCorrect, answer, setAnswer}) => {
     console.log(isCorrect, answer)
     return (
         <Container>
-            <h1>Bra jobbat!</h1>
+            {isCorrect && <h1>Bra jobbat!</h1>}
+
+            {!isCorrect && <>
+            <h1>Försök igen</h1>
+            <button onClick={() => setAnswer("")}>Försök igen</button>
+            </>}
+
             <Link to="/gameboard">
                 <button>Fortsätt spela</button>
             </Link>
             <Link to="/endgame">
-            <button>Sluta spela</button>
+                <button>Sluta spela</button>
             </Link>
-            <button>Försök igen</button>
+            
         </Container>
     )
 }

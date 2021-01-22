@@ -4,8 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { 
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link } from 'react-router-dom'
+  Route, } from 'react-router-dom'
 
 import { Start } from 'components/Start'
 import { Highscore} from 'components/Highscore'

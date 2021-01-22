@@ -6,26 +6,31 @@ import {Container} from "components/StyledComponents"
 export const EndGame = () => {
 
     const [avatarName, setAvatarName] = useState("")
-
-    
+    const sendScore = () => {
+        //Skicka resultat och avatarName till redux/backend
+    }
 
     return (
         <Container>
             <h1>Antal rätt</h1>
             <p>Vill du vara med på topplistan?</p>
             <form>
-            <label> Vad heter din Avatar? 
-                <input type="text"/>
-            </label>
-            <button>Skicka till topplista</button>
+                <label> Vad heter din Avatar?
+                    <input 
+                    type="text"
+                    value={avatarName}
+                    onChange={event => setAvatarName(event.target.value)}
+                    placeholder="Avatar"
+                    maxLength="20"/>
+                </label>
+                <button type="submit" onClick={sendScore}>Skicka till topplista</button>
             </form>
-             <Link to="/"> {/* Nollställa state/redux? */}
-            <button>Spela igen</button>
+            <Link to="/"> {/* Nollställa state/redux? */}
+                <button>Spela igen</button>
             </Link>
             <Link to="/highscore">
-            <button>Se topplista</button>
+                <button>Se topplista</button>
             </Link>
-            
         </Container>
     )
 }
