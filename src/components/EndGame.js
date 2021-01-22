@@ -8,6 +8,8 @@ export const EndGame = () => {
     const [avatarName, setAvatarName] = useState("")
     const sendScore = () => {
         //Skicka resultat och avatarName till redux/backend
+        // name: String
+        // score: Number
     }
 
     return (

@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 
 import {Container} from "components/StyledComponents"
 
-export const CompletedTask = ({isCorrect, answer, setAnswer}) => {
+export const CompletedTask = ({isCorrect, answer, setAnswer, why}) => {
     console.log(isCorrect, answer)
     return (
         <Container>
-            {isCorrect && <h1>Bra jobbat!</h1>}
+            {isCorrect && <>
+            <h1>Bra jobbat!</h1>
+            <p>{why}</p></>}
 
             {!isCorrect && <>
             <h1>Försök igen</h1>
