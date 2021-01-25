@@ -7,6 +7,7 @@ import { Start } from "components/Start";
 import { Highscore } from "components/Highscore";
 import { Task1 } from "components/tasks/Task1";
 import { Task2 } from "components/tasks/Task2";
+import { Task3 } from "components/tasks/Task3";
 import { GameBoard } from "components/GameBoard";
 import { EndGame } from "components/EndGame";
 import { game } from "reducers/game";
@@ -30,6 +31,9 @@ export const App = () => {
           </Route>
           <Route path="/task2" exact>
             <Task2 />
+          </Route>
+          <Route path="/task3" exact>
+            <Task3 />
           </Route>
           <Route path="/endgame" exact>
             <EndGame />

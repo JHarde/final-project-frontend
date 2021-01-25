@@ -13,8 +13,9 @@ export const GameBoard = () => {
       <Link to="/task2">
         <button>Spel 2</button>
       </Link>
-
-      <button>Spel 3</button>
+      <Link to="/task3">
+        <button>Spel 3</button>
+      </Link>
     </Container>
   );
 };
