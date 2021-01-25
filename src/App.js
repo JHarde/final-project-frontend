@@ -1,21 +1,18 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { 
-  BrowserRouter as Router,
-  Switch,
-  Route, } from 'react-router-dom'
+import React from "react";
+import { Provider } from "react-redux";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Start } from 'components/Start'
-import { Highscore} from 'components/Highscore'
-import { Task1 } from 'components/tasks/Task1'
-import { GameBoard } from 'components/GameBoard'
-import { EndGame } from "components/EndGame"
-import { game } from 'reducers/game'
+import { Start } from "components/Start";
+import { Highscore } from "components/Highscore";
+import { Task1 } from "components/tasks/Task1";
+import { Task2 } from "components/tasks/Task2";
+import { GameBoard } from "components/GameBoard";
+import { EndGame } from "components/EndGame";
+import { game } from "reducers/game";
 
-
-const reducer = combineReducers({game: game.reducer })
-const store = configureStore({reducer})
+const reducer = combineReducers({ game: game.reducer });
+const store = configureStore({ reducer });
 
 export const App = () => {
   return (
@@ -43,5 +40,5 @@ export const App = () => {
         </Switch>
       </Router>
     </Provider>
-  )
-}
+  );
+};
