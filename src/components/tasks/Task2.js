@@ -7,8 +7,6 @@ import { DragAndDropContainer } from "components/DragAndDropContainer";
 import { CompletedTask } from "components/CompletedTask";
 
 export const Task2 = () => {
-  const question = useSelector((store) => store.game.questions[2]);
-
   // const handleOnClick = (answer) => {
   //   answer === question.correctAnswer[0]
   //     ? setIsCorrect(true)
