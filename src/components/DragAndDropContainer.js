@@ -25,6 +25,8 @@ export const DragAndDropContainer = () => {
     { accepts: [ItemTypes.METAL], lastDroppedItem: null },
   ]);
 
+  //dustbins lastdroppeditem -> push lastdroppeditem to a array for each type
+
   const [boxes] = useState([
     { name: "Tidning", type: ItemTypes.PAPER },
     { name: "Konservburk", type: ItemTypes.METAL },
@@ -62,6 +64,7 @@ export const DragAndDropContainer = () => {
     },
     [droppedBoxNames, dustbins]
   );
+  console.log(dustbins);
 
   return (
     <div>
