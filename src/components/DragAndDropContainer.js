@@ -122,6 +122,9 @@ export const DragAndDropContainer = () => {
               />
             ))}
           </div>
+          <button type="button" onClick={() => handleOnClick()}>
+            Klar
+          </button>
         </Container>
       )}
       {answer && (
