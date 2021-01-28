@@ -1,31 +1,34 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import {useDispatch} from 'react-redux'
+import React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-import { Container } from 'components/StyledComponents'
-import { fetchQuestions } from 'reducers/game'
-
+import {
+  Container,
+  Button,
+  Title,
+  Paragraph,
+} from "components/StyledComponents";
+import { fetchQuestions } from "reducers/game";
 
 export const Start = () => {
-    const dispatch = useDispatch();
-    const startGame = () => {
-        dispatch(fetchQuestions());
-    }
+  const dispatch = useDispatch();
+  const startGame = () => {
+    dispatch(fetchQuestions());
+  };
 
-    return (
-        <Container>
-            <h1>Hej!</h1>
-            <p>Superkort information om spelet och klimatet</p>
+  return (
+    <Container>
+      {/* <Image /> */}
+      <Title>Klimatpelet</Title>
+      <Paragraph>Superkort information om spelet och klimatet</Paragraph>
 
-            {/* Fix semantic/accessibility */}
-            <Link to="/gameboard">
-                <button onClick={startGame}>Börja spela</button>
-            </Link> 
-            <Link to="/highscore">
-            <button>Se topplista</button>
-            </Link>
-            
-        </Container>
-
-    )
-}
+      {/* Fix semantic/accessibility */}
+      <Link to="/gameboard">
+        <Button onClick={startGame}>Börja spela</Button>
+      </Link>
+      <Link to="/highscore">
+        <Button>Se topplista</Button>
+      </Link>
+    </Container>
+  );
+};

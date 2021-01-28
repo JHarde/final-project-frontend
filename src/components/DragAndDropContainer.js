@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import update from "immutability-helper";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Container } from "components/StyledComponents";
+import { TaskContainer } from "components/StyledComponents";
 import { CompletedTask } from "components/CompletedTask";
 import { Box } from "components/Box";
 import { Dustbin } from "components/Dustbin";
@@ -101,7 +101,7 @@ export const DragAndDropContainer = () => {
     <>
       {" "}
       {!answer && (
-        <Container>
+        <TaskContainer>
           <div style={{ overflow: "hidden", clear: "both" }}>
             {dustbins.map(({ accepts, lastDroppedItem }, index) => (
               <Dustbin
@@ -125,7 +125,7 @@ export const DragAndDropContainer = () => {
           <button type="button" onClick={() => handleOnClick()}>
             Klar
           </button>
-        </Container>
+        </TaskContainer>
       )}
       {answer && (
         <CompletedTask

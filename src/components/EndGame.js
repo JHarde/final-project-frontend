@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Container } from "components/StyledComponents";
+import {
+  Header,
+  EndGameContainer,
+  Paragraph,
+  FormLabel,
+  HeaderScore,
+  Button,
+} from "components/StyledComponents";
 import { fetchHighscore, postHighscore } from "reducers/game";
 
 export const EndGame = () => {
@@ -26,11 +33,14 @@ export const EndGame = () => {
   };
 
   return (
-    <Container>
-      <h1>Antal rätt {userScore}</h1>
-      <p>Vill du vara med på topplistan?</p>
+    <EndGameContainer>
+      <HeaderScore>
+        {userScore}
+        <p>poäng</p>
+      </HeaderScore>
+      <Paragraph>Vill du vara med på topplistan?</Paragraph>
       <form>
-        <label>
+        <FormLabel>
           {" "}
           Vad heter din Avatar?
           <input
@@ -40,19 +50,19 @@ export const EndGame = () => {
             placeholder="Avatar"
             maxLength="20"
           />
-        </label>
-        <button type="submit" onClick={sendScore}>
+        </FormLabel>
+        <Button type="submit" onClick={sendScore}>
           Skicka till topplista
-        </button>
+        </Button>
       </form>
       <Link to="/">
         {" "}
         {/* Nollställa state/redux? */}
-        <button>Spela igen</button>
+        <Button>Spela igen</Button>
       </Link>
       <Link to="/highscore">
-        <button>Se topplista</button>
+        <Button>Se topplista</Button>
       </Link>
-    </Container>
+    </EndGameContainer>
   );
 };

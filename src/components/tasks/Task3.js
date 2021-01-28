@@ -6,7 +6,7 @@ import arrayMove from "array-move";
 import { Vehicles } from "components/Vehicles";
 import { CompletedTask } from "components/CompletedTask";
 import { game } from "reducers/game";
-import { Container } from "components/StyledComponents";
+import { TaskContainer } from "components/StyledComponents";
 
 export const Task3 = () => {
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ export const Task3 = () => {
   return (
     <>
       {!answer && (
-        <Container>
+        <TaskContainer>
           <h1>{question.question}</h1>
           <div>
             <SortableVehiclesContainer axis="y" onSortEnd={onSortEnd}>
@@ -64,7 +64,7 @@ export const Task3 = () => {
               Klar
             </button>
           </div>
-        </Container>
+        </TaskContainer>
       )}
       {answer && (
         <CompletedTask
