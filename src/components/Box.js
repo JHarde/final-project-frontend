@@ -1,6 +1,8 @@
 import React from "react";
 import { useDrag } from "react-dnd";
 
+import { Trash } from "components/StyledComponents";
+
 const style = {
   border: "1px dashed gray",
   backgroundColor: "white",
@@ -19,9 +21,5 @@ export const Box = ({ name, type, isDropped }) => {
     }),
   });
 
-  return (
-    <div ref={drag} style={{ ...style, opacity }}>
-      {isDropped ? <s>{name}</s> : name}
-    </div>
-  );
+  return <Trash ref={drag}>{isDropped ? <s>{name}</s> : name}</Trash>;
 };

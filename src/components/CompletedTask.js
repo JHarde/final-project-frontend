@@ -22,7 +22,7 @@ export const CompletedTask = ({ isCorrect, answer, setAnswer, why }) => {
       {!isCorrect && (
         <>
           <Header>Försök igen</Header>
-          <Button stop onClick={() => setAnswer("")}>
+          <Button color="red" onClick={() => setAnswer("")}>
             Försök igen
           </Button>
         </>

@@ -22,9 +22,9 @@ export const Highscore = () => {
     <Container>
       <Header>Highscore</Header>
       <OrderedList>
-        {highscore.map((score) => {
+        {highscore.map((score, index) => {
           return (
-            <List>
+            <List key={index}>
               {score.name} <TotalScore>{score.score}</TotalScore>
             </List>
           );

@@ -1,9 +1,11 @@
 import React from "react";
 import { useDrop } from "react-dnd";
 
+import "../assets/Glas.svg";
+
 const style = {
-  height: "12rem",
-  width: "12rem",
+  height: "6rem",
+  width: "6rem",
   marginRight: "1.5rem",
   marginBottom: "1.5rem",
   color: "white",
@@ -15,7 +17,7 @@ const style = {
   backgroundColor: "grey",
 };
 
-export const Dustbin = ({ accept, lastDroppedItem, onDrop }) => {
+export const Dustbin = ({ accept, lastDroppedItem, onDrop, image }) => {
   const [{ isOver, canDrop }, drop] = useDrop({
     accept,
     drop: onDrop,
@@ -24,6 +26,8 @@ export const Dustbin = ({ accept, lastDroppedItem, onDrop }) => {
       canDrop: monitor.canDrop(),
     }),
   });
+
+  // const trashCanImage = `.assets/${image}`;
 
   const isActive = isOver && canDrop;
   // let backgroundColor = "#222";
@@ -38,6 +42,7 @@ export const Dustbin = ({ accept, lastDroppedItem, onDrop }) => {
       {lastDroppedItem && (
         <p> Last dropped: {JSON.stringify(lastDroppedItem)}</p>
       )}
+      <img ref={drop} src={image} />
     </div>
   );
 };

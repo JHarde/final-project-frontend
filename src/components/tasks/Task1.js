@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { TaskContainer } from "components/StyledComponents";
+import { TaskContainer, TaskButton } from "components/StyledComponents";
 import { CompletedTask } from "components/CompletedTask";
 import { game } from "reducers/game";
 
@@ -32,9 +32,12 @@ export const Task1 = () => {
           <p>{question.description}</p>
           {question.answers.map((answer) => {
             return (
-              <button key={answer.id} onClick={() => handleOnClick(answer.id)}>
+              <TaskButton
+                key={answer.id}
+                onClick={() => handleOnClick(answer.id)}
+              >
                 {answer.answer}
-              </button>
+              </TaskButton>
             );
           })}
         </TaskContainer>

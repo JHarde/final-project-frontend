@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { TouchBackend } from "react-dnd-touch-backend";
 import { useMediaQuery } from "react-responsive";
 
 import { DragAndDropContainer } from "components/DragAndDropContainer";
-import { CompletedTask } from "components/CompletedTask";
 
 export const Task2 = () => {
   const isDesktopOrLapTop = useMediaQuery({ query: "(min-width: 769px)" });
