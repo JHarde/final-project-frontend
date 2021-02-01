@@ -31,7 +31,12 @@ export const EndGameContainer = styled(Container)`
 
 export const Header = styled.h1`
 	color: ${beige};
+	text-align: center;
 `;
+
+export const TaskHeader = styled(Header)`
+	color: ${blue};
+	`;
 
 export const Title = styled(Header)`
 	font-weight: 900;
@@ -65,12 +70,16 @@ export const FormLabel = styled.label`
 	flex-direction: column;
 `;
 
-export const OrderedList = styled.ol``;
+export const OrderedList = styled.ol`
+	width: 80%;
+	box-sizing: border-box;
+	font-weight: bold;
+`;
 
 export const List = styled.li`
 	color: ${beige};
 	border-bottom: 2px dotted ${beige};
-	padding: 7px;
+	padding: 10px;
 	font-size: 24px;
 
 	::marker {
@@ -82,6 +91,7 @@ export const TotalScore = styled.span`
 	color: ${lightGreen};
 	float: right;
 	margin-left: 10px;
+	font-size: 20px;
 `;
 
 export const HighscoreInput = styled.input`
