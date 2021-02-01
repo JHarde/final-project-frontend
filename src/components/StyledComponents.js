@@ -15,26 +15,16 @@ export const Container = styled.section`
 	align-items: center;
 	background-color: ${blue};
 	height: 100vh;
+	box-sizing: border-box;
+	padding: 20px;
 `;
 
-export const TaskContainer = styled.section`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+export const TaskContainer = styled(Container)`
 	background-color: ${beige};
-	height: 100vh;
-	text-align: center;
 	color: ${blue};
 `;
 
-export const EndGameContainer = styled.section`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: ${blue};
-	height: 100vh;
+export const EndGameContainer = styled(Container)`
 	text-align: center;
 	color: ${beige};
 `;
@@ -46,6 +36,7 @@ export const Header = styled.h1`
 export const Title = styled(Header)`
 	font-weight: 900;
 	font-size: 42px;
+	margin-bottom: 10px;
 `;
 
 export const HeaderScore = styled.h1`
@@ -133,7 +124,9 @@ export const TaskButton = styled(Button)`
 	width: 265px;
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+	width: 75%;
+`;
 
 export const Trash = styled.div`
 	background-color: ${blue};
