@@ -25,11 +25,13 @@ export const Start = () => {
       <Paragraph>Superkort information om spelet och klimatet</Paragraph>
 
       {/* Fix semantic/accessibility */}
-      <Link to="/gameboard">
-        <Button onClick={startGame}>Börja spela</Button>
+      <Link to="/login">
+        <Button>Logga in</Button>
       </Link>
-      <Link to="/highscore">
-        <Button>Se topplista</Button>
+      <Link to="/gameboard">
+        <Button onClick={startGame}>Spela som gäst</Button>
+      </Link>
+      <Link to="/signup">Skapa konto
       </Link>
     </Container>
   );

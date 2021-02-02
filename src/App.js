@@ -12,6 +12,8 @@ import { GameBoard } from "components/GameBoard";
 import { EndGame } from "components/EndGame";
 import { AboutUs } from "components/AboutUs";
 import { game } from "reducers/game";
+import { Login } from "components/Login"
+import { SignUp } from "components/SignUp"
 
 const reducer = combineReducers({ game: game.reducer });
 const store = configureStore({ reducer });
@@ -44,6 +46,12 @@ export const App = () => {
           </Route>
           <Route path="/aboutus" exact>
             <AboutUs />
+          </Route>
+          <Route path="/login" exact>
+            <Login />
+          </Route>
+          <Route path="/signup" exact>
+            <SignUp />
           </Route>
         </Switch>
       </Router>
