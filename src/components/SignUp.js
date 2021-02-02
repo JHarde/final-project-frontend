@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useSelector } from "react-redux";
 
 import { Container, Button, FormLabel, HighscoreInput, ErrorParagraph } from 'components/StyledComponents'
+import { user } from "reducers/user"
+import { Login } from "components/Login"
 
 export const SignUp = () => {
     const [username, setUsername] = useState('')
@@ -9,6 +12,8 @@ export const SignUp = () => {
     const [passwordError, setPasswordError] = useState('')
     const [nameError, setNameError] = useState('')
     const SIGNUP_URL = "https://environmental-kids-game.herokuapp.com/users"
+    const [signUpSuccess, setSignUpSuccess] = useState(false) 
+
 
     const handleSignUpFail = (errorMessage) => {
         if (errorMessage.code) {
@@ -22,6 +27,7 @@ export const SignUp = () => {
     const handleSignUpSuccess = (userInfo) => {
         setNameError("");
         setPasswordError("")
+        setSignUpSuccess(true)
         //Send AccessToken to redux
         //Log in
         //Send to GameBoard
@@ -47,31 +53,35 @@ export const SignUp = () => {
     }
 
     console.log(signUpInfo)
-    return (
-        <Container>
-            <form>
-                <FormLabel>Välj ett användarnamn:
-                    <HighscoreInput 
-                    type="text"
-                    value={username}
-                    onChange={event => setUsername(event.target.value)}
-                    placeholder="Användarnamn"
-                    />
-                    {nameError && <ErrorParagraph>{nameError}</ErrorParagraph>}
-                </FormLabel>
-                
-                <FormLabel>Välj ett lösenord:
-                    <HighscoreInput
-                    type="password"
-                    value={password}
-                    onChange={event => setPassword(event.target.value)}
-                    placeholder="Lösenord"
-                    />
-                    {passwordError && <ErrorParagraph>{passwordError}</ErrorParagraph>}
-                </FormLabel>
-                
-                <Button type="submit" onClick={handleSignUp}>Skapa konto</Button>
-            </form>
-        </Container>
-    )
+    if (!signUpSuccess) {
+        return (
+            <Container>
+                <form>
+                    <FormLabel>Välj ett användarnamn:
+                        <HighscoreInput 
+                        type="text"
+                        value={username}
+                        onChange={event => setUsername(event.target.value)}
+                        placeholder="Användarnamn"
+                        />
+                        {nameError && <ErrorParagraph>{nameError}</ErrorParagraph>}
+                    </FormLabel>
+                    
+                    <FormLabel>Välj ett lösenord:
+                        <HighscoreInput
+                        type="password"
+                        value={password}
+                        onChange={event => setPassword(event.target.value)}
+                        placeholder="Lösenord"
+                        />
+                        {passwordError && <ErrorParagraph>{passwordError}</ErrorParagraph>}
+                    </FormLabel>
+                    
+                    <Button type="submit" onClick={handleSignUp}>Skapa konto</Button>
+                </form>
+            </Container>
+        )
+    } else {
+        return <Login />
+    }
 }

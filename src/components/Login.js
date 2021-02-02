@@ -1,16 +1,28 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 
 import { Container, Button, FormLabel, HighscoreInput, ErrorParagraph, Paragraph } from 'components/StyledComponents'
+import { user } from "reducers/user"
+import { GameBoard } from "components/GameBoard"
 
 export const Login = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [userInfo, setUserInfo] = useState("")
+    const accessToken = useSelector(store => store.user.accessToken)
+    const dispatch = useDispatch()
     const LOGIN_URL = "https://environmental-kids-game.herokuapp.com/sessions"
 
     const handleLogInSuccess = (userInfo) => {
-        //Send Accesstoken to redux
+        dispatch(
+            user.actions.setAccessToken(userInfo)
+        )
+        dispatch(
+            user.actions.setUserId(userInfo)
+        )
+        
         //Send to GameBoard.js
     }
 
@@ -31,30 +43,37 @@ export const Login = () => {
         })
     }
 
-    return (
-        <Container>
-            <form>
-                <FormLabel>Användarnamn
-                    <HighscoreInput
-                    type="text"
-                    value={username}
-                    onChange={event => setUsername(event.target.value)}
-                    placeholder="Användarnamn" />
-                </FormLabel>
-                <FormLabel>Lösenord
-                    <HighscoreInput
-                    type="password"
-                    value={password}
-                    onChange={event => setPassword(event.target.value)}
-                    placeholder="Lösenord" />
-                </FormLabel>
+    console.log(userInfo)
+
+    if (!accessToken) {
+        return (
+            <Container>
+                <form>
+                    <FormLabel>Användarnamn
+                        <HighscoreInput
+                        type="text"
+                        value={username}
+                        onChange={event => setUsername(event.target.value)}
+                        placeholder="Användarnamn" />
+                    </FormLabel>
+                    <FormLabel>Lösenord
+                        <HighscoreInput
+                        type="password"
+                        value={password}
+                        onChange={event => setPassword(event.target.value)}
+                        placeholder="Lösenord" />
+                    </FormLabel>
+                    {userInfo.error &&
+                        <ErrorParagraph>Det gick inte att logga in, kontrollera användarnamn och lösenord</ErrorParagraph>
+                    }
+                    <Button type="submit" onClick={handleLogIn}>Logga In</Button>
+                </form>
                 {userInfo.error &&
-                    <ErrorParagraph>Det gick inte att logga in, kontrollera användarnamn och lösenord</ErrorParagraph>
-                }
-                <Button type="submit" onClick={handleLogIn}>Logga In</Button>
-            </form>
-            {userInfo.error &&
-                <Paragraph>{<Link to="/signup">Skapa nytt konto</Link>}</Paragraph>}
-        </Container>
-    )
+                    <Paragraph>{<Link to="/signup">Skapa nytt konto</Link>}</Paragraph>}
+            </Container>
+        
+        )
+    } else {
+        return <GameBoard />
+    }
 }

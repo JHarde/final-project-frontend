@@ -12,10 +12,11 @@ import { GameBoard } from "components/GameBoard";
 import { EndGame } from "components/EndGame";
 import { AboutUs } from "components/AboutUs";
 import { game } from "reducers/game";
+import { user } from "reducers/user"
 import { Login } from "components/Login"
 import { SignUp } from "components/SignUp"
 
-const reducer = combineReducers({ game: game.reducer });
+const reducer = combineReducers({ game: game.reducer, user: user.reducer });
 const store = configureStore({ reducer });
 
 export const App = () => {
