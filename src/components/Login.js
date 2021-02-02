@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 
-import { Container } from 'components/StyledComponents'
+import { Container, Button } from 'components/StyledComponents'
 
 export const Login = () => {
     const [username, setUsername] = useState("")
@@ -19,10 +20,8 @@ export const Login = () => {
         .then((res) => res.json())
         .then((json) => {
             setUserInfo(json)
-
         })
     }
-    console.log(userInfo)
 
     return (
         <Container>
@@ -43,8 +42,12 @@ export const Login = () => {
                     onChange={event => setPassword(event.target.value)}
                     placeholder="Lösenord" />
                 </label>
-                <button type="submit" onClick={handleLogIn}>Logga In</button>
+                <Button type="submit" onClick={handleLogIn}>Logga In</Button>
+                {userInfo.error && <>
+                <p>Det gick inte att logga in, kontrollera användarnamn och lösenord</p>
+                <p>Har du inget konto? {<Link to="/signup">Skapa ett här</Link>}</p>
+                </>}
             </form>
-            </Container>
+        </Container>
     )
 }

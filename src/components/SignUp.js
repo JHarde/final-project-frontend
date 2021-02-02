@@ -7,8 +7,25 @@ export const SignUp = () => {
     const [password, setPassword] = useState('')
     const [signUpInfo, setSignUpInfo] = useState('')
     const [passwordError, setPasswordError] = useState('')
-    const [errorMessage, setErrorMessage] = useState()
+    const [nameError, setNameError] = useState('')
     const SIGNUP_URL = "https://environmental-kids-game.herokuapp.com/users"
+
+    const handleSignUpFail = (errorMessage) => {
+        if (errorMessage.code) {
+            setNameError("Användarnamnet är upptaget, välj ett annat");
+        } else if (errorMessage.errors) {
+            errorMessage.errors.name ? setNameError("Fyll i ett användarnamn") : setNameError("");
+            errorMessage.errors.password ? setPasswordError("Lösenordet behöver vara minst 5 tecken") : setPasswordError("");
+        }
+    }
+
+    const handleSignUpSuccess = (userInfo) => {
+        setNameError("");
+        setPasswordError("")
+        //Send AccessToken to redux
+        //Log in
+        //Send to GameBoard
+    }
 
     const handleSignUp = (event) => {
         event.preventDefault();
@@ -22,10 +39,13 @@ export const SignUp = () => {
         .then((json) => {
             setSignUpInfo(json)
             if (json.errors) {
-                setErrorMessage(json.errors)
-            } 
+                handleSignUpFail(json.errors)
+            } else {
+                handleSignUpSuccess(json);
+            }
         })
     }
+
     console.log(signUpInfo)
     return (
         <Container>
@@ -38,9 +58,7 @@ export const SignUp = () => {
                     placeholder="Användarnamn"
                     />
                 </label>
-
-                {errorMessage && errorMessage.code && <p>Användarnamnet är upptaget, välj ett annat</p>}
-                {errorMessage && errorMessage.errors && errorMessage.errors.name && <p>Skriv användarnamn</p>}
+                {nameError && <p>{nameError}</p>}
                 <label>Välj ett lösenord:
                     <input 
                     type="password"
@@ -49,7 +67,7 @@ export const SignUp = () => {
                     placeholder="Lösenord"
                     />
                 </label>
-                {errorMessage && errorMessage.errors && errorMessage.errors.password && <p>Lösenordet behöver vara minst 5 tecken</p>}
+                {passwordError && <p>{passwordError}</p>}
                 <Button type="submit" onClick={handleSignUp}>Skapa konto</Button>
             </form>
         </Container>
