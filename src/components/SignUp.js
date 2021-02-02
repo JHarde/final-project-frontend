@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Container, Button } from 'components/StyledComponents'
+import { Container, Button, FormLabel, HighscoreInput, ErrorParagraph } from 'components/StyledComponents'
 
 export const SignUp = () => {
     const [username, setUsername] = useState('')
@@ -50,24 +50,26 @@ export const SignUp = () => {
     return (
         <Container>
             <form>
-                <label>Välj ett användarnamn:
-                    <input 
+                <FormLabel>Välj ett användarnamn:
+                    <HighscoreInput 
                     type="text"
                     value={username}
                     onChange={event => setUsername(event.target.value)}
                     placeholder="Användarnamn"
                     />
-                </label>
-                {nameError && <p>{nameError}</p>}
-                <label>Välj ett lösenord:
-                    <input 
+                    {nameError && <ErrorParagraph>{nameError}</ErrorParagraph>}
+                </FormLabel>
+                
+                <FormLabel>Välj ett lösenord:
+                    <HighscoreInput
                     type="password"
                     value={password}
                     onChange={event => setPassword(event.target.value)}
                     placeholder="Lösenord"
                     />
-                </label>
-                {passwordError && <p>{passwordError}</p>}
+                    {passwordError && <ErrorParagraph>{passwordError}</ErrorParagraph>}
+                </FormLabel>
+                
                 <Button type="submit" onClick={handleSignUp}>Skapa konto</Button>
             </form>
         </Container>

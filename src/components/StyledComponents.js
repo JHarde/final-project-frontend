@@ -15,6 +15,7 @@ export const Container = styled.section`
 	align-items: center;
 	background-color: ${blue};
 	height: 100vh;
+	color: ${beige};
 `;
 
 export const TaskContainer = styled.section`
@@ -69,10 +70,22 @@ export const Paragraph = styled.p`
 	font-size: 24px;
 `;
 
+export const ErrorParagraph = styled.p`
+	color: ${red};
+	margin: 0;
+	font-size: 16px;
+	width: 245px;
+	box-sizing: border-box;
+	padding: 0 10px;
+`;
+
 export const FormLabel = styled.label`
 	display: flex;
 	flex-direction: column;
+	font-size: 20px;
+	margin: 20px 0;
 `;
+
 
 export const OrderedList = styled.ol``;
 
@@ -99,6 +112,9 @@ export const HighscoreInput = styled.input`
 	height: 90px;
 	border: none;
 	margin: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 20px;
 
 	::placeholder {
 		font-size: 20px;
