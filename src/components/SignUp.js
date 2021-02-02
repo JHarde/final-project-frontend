@@ -5,7 +5,9 @@ import { Container, Button } from 'components/StyledComponents'
 export const SignUp = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [userInfo, setUserInfo] = useState('')
+    const [signUpInfo, setSignUpInfo] = useState('')
+    const [passwordError, setPasswordError] = useState('')
+    const [errorMessage, setErrorMessage] = useState()
     const SIGNUP_URL = "https://environmental-kids-game.herokuapp.com/users"
 
     const handleSignUp = (event) => {
@@ -18,10 +20,13 @@ export const SignUp = () => {
         })
         .then((res) => res.json())
         .then((json) => {
-            setUserInfo(json)
+            setSignUpInfo(json)
+            if (json.errors) {
+                setErrorMessage(json.errors)
+            } 
         })
     }
-    console.log(userInfo)
+    console.log(signUpInfo)
     return (
         <Container>
             <form>
@@ -33,6 +38,9 @@ export const SignUp = () => {
                     placeholder="Användarnamn"
                     />
                 </label>
+
+                {errorMessage && errorMessage.code && <p>Användarnamnet är upptaget, välj ett annat</p>}
+                {errorMessage && errorMessage.errors && errorMessage.errors.name && <p>Skriv användarnamn</p>}
                 <label>Välj ett lösenord:
                     <input 
                     type="password"
@@ -41,6 +49,7 @@ export const SignUp = () => {
                     placeholder="Lösenord"
                     />
                 </label>
+                {errorMessage && errorMessage.errors && errorMessage.errors.password && <p>Lösenordet behöver vara minst 5 tecken</p>}
                 <Button type="submit" onClick={handleSignUp}>Skapa konto</Button>
             </form>
         </Container>
