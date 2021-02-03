@@ -103,6 +103,15 @@ export const StyledLink = styled(Link)`
 	margin: 10px;
 `;
 
+export const TextButton = styled.button`
+	background-color: ${blue};
+	color: ${beige};
+	font-size: 20px; 
+	border: none; 
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+`
+
 export const FormLabel = styled.label`
 	display: flex;
 	flex-direction: column;

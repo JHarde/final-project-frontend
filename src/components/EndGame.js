@@ -15,11 +15,14 @@ import {
 	ScoreParagraph
 } from 'components/StyledComponents';
 import { fetchHighscore, postHighscore } from 'reducers/game';
+import { user } from 'reducers/user';
 import { Highscore } from 'components/Highscore'
+import { Logout } from 'components/Logout'
 
 export const EndGame = () => {
 	const dispatch = useDispatch();
 	const userScore = useSelector((store) => store.game.userScore);
+	const accessToken = useSelector((store) => store.user.accessToken);
 	const [avatarName, setAvatarName] = useState('');
 	const [isSent, setIsSent] = useState(false);
 
@@ -63,11 +66,13 @@ export const EndGame = () => {
 					Skicka till topplista
 				</Button>
 			</form>
-			<Link to="/">
+			
+			<Logout button/>
+			{/* <Link to="/">
 				{' '}
-				{/* Nollställa state/redux? */}
+				 Nollställa state/redux?
 				<Button>Spela igen</Button>
-			</Link>
+			</Link> */}
 			{/* <Link to="/highscore">
 				<Button>Se topplista</Button>
 			</Link> */}
