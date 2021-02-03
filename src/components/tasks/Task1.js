@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { TaskContainer, TaskButton } from "components/StyledComponents";
+import { TaskContainer, TaskButton, Image, Header, TaskHeader } from "components/StyledComponents";
 import { CompletedTask } from "components/CompletedTask";
 import { game } from "reducers/game";
+import Tandborstning from "../../assets/Tandborstning.svg"
 
 export const Task1 = () => {
   const dispatch = useDispatch();
@@ -28,8 +29,9 @@ export const Task1 = () => {
       {" "}
       {!answer && (
         <TaskContainer>
-          <h1>{question.question}</h1>
-          <p>{question.description}</p>
+          <Image src={Tandborstning}/>
+          <TaskHeader>{question.question}</TaskHeader>
+          {/* <p>{question.description}</p> */}
           {question.answers.map((answer) => {
             return (
               <TaskButton

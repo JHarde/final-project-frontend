@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import Earth_3 from "../assets/Earth_3.svg";
+import Earth_Happy from "../assets/Earth_Happy.svg";
 
 import {
   Container,
@@ -20,7 +20,7 @@ export const Start = () => {
 
   return (
     <Container>
-      <Image src={Earth_3} />
+      <Image src={Earth_Happy} />
       <Title>Klimatspelet</Title>
       <Paragraph>Superkort information om spelet och klimatet</Paragraph>
 

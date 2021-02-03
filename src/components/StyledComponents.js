@@ -16,37 +16,33 @@ export const Container = styled.section`
 	background-color: ${blue};
 	height: 100vh;
 	color: ${beige};
+	box-sizing: border-box;
+	padding: 20px;
 `;
 
-export const TaskContainer = styled.section`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+export const TaskContainer = styled(Container)`
 	background-color: ${beige};
-	height: 100vh;
-	text-align: center;
 	color: ${blue};
 `;
 
-export const EndGameContainer = styled.section`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: ${blue};
-	height: 100vh;
+export const EndGameContainer = styled(Container)`
 	text-align: center;
 	color: ${beige};
 `;
 
 export const Header = styled.h1`
 	color: ${beige};
+	text-align: center;
 `;
+
+export const TaskHeader = styled(Header)`
+	color: ${blue};
+	`;
 
 export const Title = styled(Header)`
 	font-weight: 900;
 	font-size: 42px;
+	margin-bottom: 10px;
 `;
 
 export const HeaderScore = styled.h1`
@@ -86,13 +82,16 @@ export const FormLabel = styled.label`
 	margin: 20px 0;
 `;
 
-
-export const OrderedList = styled.ol``;
+export const OrderedList = styled.ol`
+	width: 80%;
+	box-sizing: border-box;
+	font-weight: bold;
+`;
 
 export const List = styled.li`
 	color: ${beige};
 	border-bottom: 2px dotted ${beige};
-	padding: 7px;
+	padding: 10px;
 	font-size: 24px;
 
 	::marker {
@@ -104,6 +103,7 @@ export const TotalScore = styled.span`
 	color: ${lightGreen};
 	float: right;
 	margin-left: 10px;
+	font-size: 20px;
 `;
 
 export const HighscoreInput = styled.input`
@@ -149,7 +149,9 @@ export const TaskButton = styled(Button)`
 	width: 265px;
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+	width: 75%;
+`;
 
 export const Trash = styled.div`
 	background-color: ${blue};
