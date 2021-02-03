@@ -15,7 +15,11 @@ export const Dustbin = ({ accept, onDrop, image }) => {
 
 	return (
 		<div ref={drop}>
-			{isActive ? null : <div style={{ width: 100 }} />}
+			{isActive ? (
+				<div style={{ width: 100 }} />
+			) : (
+				<div style={{ width: 100 }} />
+			)}
 
 			<img src={require(`../assets/${image}`)} alt="Trashcan" />
 		</div>

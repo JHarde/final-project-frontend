@@ -20,13 +20,13 @@ export const Task2 = () => {
 
 	const Touch = {
 		backends: [
+			{ backend: HTML5Backend },
 			{
 				backend: TouchBackend,
 				options: { enableMouseEvents: true },
 				preview: true,
 				transition: TouchTransition,
 			},
-			{ backend: HTML5Backend },
 		],
 	};
 
