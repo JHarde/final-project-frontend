@@ -21,7 +21,7 @@ export const Start = () => {
   return (
     <Container>
       <Image src={Earth_3} />
-      <Title>Klimatpelet</Title>
+      <Title>Klimatspelet</Title>
       <Paragraph>Superkort information om spelet och klimatet</Paragraph>
 
       {/* Fix semantic/accessibility */}
