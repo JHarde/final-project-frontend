@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from "react-redux";
 
-import { Container, Button, FormLabel, HighscoreInput, ErrorParagraph } from 'components/StyledComponents'
+import { Container, Button, FormLabel, Input, ErrorParagraph } from 'components/StyledComponents'
 import { user } from "reducers/user"
 import { Login } from "components/Login"
 
@@ -58,7 +58,7 @@ export const SignUp = () => {
             <Container>
                 <form>
                     <FormLabel>Välj ett användarnamn:
-                        <HighscoreInput 
+                        <Input 
                         type="text"
                         value={username}
                         onChange={event => setUsername(event.target.value)}
@@ -68,7 +68,7 @@ export const SignUp = () => {
                     </FormLabel>
                     
                     <FormLabel>Välj ett lösenord:
-                        <HighscoreInput
+                        <Input
                         type="password"
                         value={password}
                         onChange={event => setPassword(event.target.value)}

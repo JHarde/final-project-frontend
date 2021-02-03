@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 const blue = '#223A59';
 const darkBlue = '#0B1D34';
@@ -33,6 +34,7 @@ export const EndGameContainer = styled(Container)`
 export const Header = styled.h1`
 	color: ${beige};
 	text-align: center;
+	font-size: 30px;
 `;
 
 export const TaskHeader = styled(Header)`
@@ -46,13 +48,18 @@ export const Title = styled(Header)`
 `;
 
 export const HeaderScore = styled.h1`
-	font-size: 90px;
-	margin-bottom: 10px;
-	margin-top: 10px;
-`;
+	font-size: 100px;
+	margin: 0;
+	padding: 0;
+	color: ${blue};
+	font-weight: 900;
+	line-height: 90px;
+	`;
 
 export const HeaderScoreContainer = styled.div`
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	flex-direction: column;
 	background-color: ${lightGreen};
 	border-radius: 50%;
@@ -64,6 +71,14 @@ export const Paragraph = styled.p`
 	text-align: center;
 	color: ${beige};
 	font-size: 24px;
+	
+`;
+
+export const ScoreParagraph = styled.span`
+	margin: 0;
+	color: ${blue};
+	font-weight: bold;
+	font-size: 30px;
 `;
 
 export const ErrorParagraph = styled.p`
@@ -75,11 +90,23 @@ export const ErrorParagraph = styled.p`
 	padding: 0 10px;
 `;
 
+export const StyledLink = styled(Link)`
+	color: ${beige};
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 24px;
+	margin: 10px;
+`;
+
 export const FormLabel = styled.label`
 	display: flex;
 	flex-direction: column;
 	font-size: 20px;
 	margin: 20px 0;
+`;
+
+export const HighscoreLabel = styled(FormLabel)`
+	margin: 2px;
 `;
 
 export const OrderedList = styled.ol`
@@ -106,23 +133,25 @@ export const TotalScore = styled.span`
 	font-size: 20px;
 `;
 
-export const HighscoreInput = styled.input`
+export const Input = styled.input`
 	border-radius: 20px;
-	width: 245px;
+	width: 272px;
 	height: 90px;
 	border: none;
 	margin: 10px;
 	box-sizing: border-box;
 	padding: 10px;
-	font-size: 20px;
+	font-size: 26px;
+	background-color: ${beige};
 
 	::placeholder {
 		font-size: 20px;
+		color: #BDB29E;
 	}
 `;
 
 export const Button = styled.button`
-	width: 245px;
+	width: 272px;
 	height: 90px;
 	border-radius: 20px;
 	margin: 10px;
@@ -149,6 +178,12 @@ export const TaskButton = styled(Button)`
 	width: 265px;
 `;
 
+export const SmallButton = styled(Button)`
+	width: 190px;
+	height: 60px;
+	font-size: 27px;
+`;
+
 export const Image = styled.img`
 	width: 75%;
 `;
@@ -158,7 +193,7 @@ export const Trash = styled.div`
 	color: ${beige};
 	padding: 10px;
 	border-radius: 20px;
-	margin: 10px;
+	margin: 4px;
 `;
 
 export const TrashContainer = styled.div`

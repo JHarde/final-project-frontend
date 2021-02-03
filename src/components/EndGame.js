@@ -6,12 +6,13 @@ import {
 	Header,
 	EndGameContainer,
 	Paragraph,
-	FormLabel,
+	HighscoreLabel,
 	HeaderScore,
 	Button,
-	HighscoreInput,
+	Input,
 	HeaderScoreContainer,
 	HeaderScorePoints,
+	ScoreParagraph
 } from 'components/StyledComponents';
 import { fetchHighscore, postHighscore } from 'reducers/game';
 
@@ -39,22 +40,22 @@ export const EndGame = () => {
 		<EndGameContainer>
 			<HeaderScoreContainer>
 				<HeaderScore>{userScore}</HeaderScore>
-				<Paragraph>poäng</Paragraph>
+				<ScoreParagraph>poäng</ScoreParagraph>
 			</HeaderScoreContainer>
 
-			<Paragraph>Vill du vara med på topplistan?</Paragraph>
+			<Header>Vill du vara med på topplistan?</Header>
 			<form>
-				<FormLabel>
+				<HighscoreLabel>
 					Vad heter din Avatar?
-					<HighscoreInput
+					<Input
 						type="text"
 						value={avatarName}
 						onChange={(event) => setAvatarName(event.target.value)}
-						placeholder="Skriv namnet på din Avatar"
+						placeholder="Skriv ett namn här"
 						maxLength="20"
 					/>
-				</FormLabel>
-				<Button type="submit" onClick={sendScore}>
+				</HighscoreLabel>
+				<Button type="submit" onClick={sendScore} style={{fontSize: 27}}>
 					Skicka till topplista
 				</Button>
 			</form>
@@ -63,9 +64,9 @@ export const EndGame = () => {
 				{/* Nollställa state/redux? */}
 				<Button>Spela igen</Button>
 			</Link>
-			<Link to="/highscore">
+			{/* <Link to="/highscore">
 				<Button>Se topplista</Button>
-			</Link>
+			</Link> */}
 		</EndGameContainer>
 	);
 };
