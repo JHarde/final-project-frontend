@@ -74,6 +74,11 @@ export const Paragraph = styled.p`
 	
 `;
 
+export const SmallerParagraph = styled(Paragraph)`
+	font-size: 20px;
+	margin-top: 0;
+`;
+
 export const ScoreParagraph = styled.span`
 	margin: 0;
 	color: ${blue};
@@ -110,20 +115,23 @@ export const HighscoreLabel = styled(FormLabel)`
 `;
 
 export const OrderedList = styled.ol`
-	width: 80%;
+	width: 90%;
 	box-sizing: border-box;
 	font-weight: bold;
+	margin: 30px;
 `;
 
 export const List = styled.li`
 	color: ${beige};
-	border-bottom: 2px dotted ${beige};
-	padding: 10px;
+	border-bottom: 0.2px solid #0B1D34;
+	padding: 15px;
 	font-size: 24px;
 
 	::marker {
 		color: ${red};
+		font-size: 18px;
 	}
+
 `;
 
 export const TotalScore = styled.span`
@@ -131,6 +139,11 @@ export const TotalScore = styled.span`
 	float: right;
 	margin-left: 10px;
 	font-size: 20px;
+	font-weight: bold;
+`;
+
+export const FirstPlaceScore = styled(TotalScore)`
+	font-size: 24px;
 `;
 
 export const Input = styled.input`
@@ -202,4 +215,31 @@ export const TrashContainer = styled.div`
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
+`;
+
+export const DustbinContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+`; 
+
+export const FirstPlaceCirkel = styled.div`
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	background-color: ${red};
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+`;
+
+export const FirstPlaceContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 `;

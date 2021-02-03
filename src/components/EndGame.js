@@ -15,11 +15,13 @@ import {
 	ScoreParagraph
 } from 'components/StyledComponents';
 import { fetchHighscore, postHighscore } from 'reducers/game';
+import { Highscore } from 'components/Highscore'
 
 export const EndGame = () => {
 	const dispatch = useDispatch();
 	const userScore = useSelector((store) => store.game.userScore);
 	const [avatarName, setAvatarName] = useState('');
+	const [isSent, setIsSent] = useState(false);
 
 	const sendScore = (event) => {
 		// dispatch(postHighscore(avatarName, userScore));
@@ -31,11 +33,13 @@ export const EndGame = () => {
 			.then((res) => res.json())
 			.then((res) => {
 				console.log(res);
+				setIsSent(true);
 			});
 
 		event.preventDefault();
-	};
 
+	};
+	if(!isSent){
 	return (
 		<EndGameContainer>
 			<HeaderScoreContainer>
@@ -69,4 +73,8 @@ export const EndGame = () => {
 			</Link> */}
 		</EndGameContainer>
 	);
+	} else {
+		return <Highscore/>
+	}
+
 };

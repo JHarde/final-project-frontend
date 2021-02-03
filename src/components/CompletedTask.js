@@ -3,19 +3,23 @@ import { Link } from "react-router-dom";
 
 import {
   Container,
-  Paragraph,
+  SmallerParagraph,
   Header,
   Button,
+  Image,
 } from "components/StyledComponents";
+import Earth_Happy from "../assets/Earth_Happy.svg";
+
 
 export const CompletedTask = ({ isCorrect, answer, setAnswer, why }) => {
   console.log(isCorrect, answer);
   return (
     <Container>
+      <Image src={Earth_Happy} />
       {isCorrect && (
         <>
           <Header>Bra jobbat!</Header>
-          <Paragraph>{why}</Paragraph>
+          <SmallerParagraph>{why}</SmallerParagraph>
         </>
       )}
 

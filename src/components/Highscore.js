@@ -9,7 +9,11 @@ import {
   List,
   TotalScore,
   OrderedList,
-  Button
+  Button,
+  FirstPlaceCirkel,
+  FirstPlaceScore,
+  HeaderScore,
+  FirstPlaceContainer
 } from "components/StyledComponents";
 import { fetchHighscore } from "reducers/game";
 
@@ -21,12 +25,22 @@ export const Highscore = () => {
   }, []);
 
   const highscore = useSelector((store) => store.game.highscore);
+  const slicedHighscore = highscore.slice(1,6);
+  const firstPlace = highscore[0]
+  console.log(firstPlace ? firstPlace.name : 'hej')
   
   return (
     <Container>
-      <Header>Highscore</Header>
-      <OrderedList>
-        {highscore.map((score, index) => {
+      <FirstPlaceContainer>
+        <FirstPlaceCirkel>
+          <HeaderScore style={{fontSize: 48}}>1</HeaderScore>
+        </FirstPlaceCirkel>
+        {firstPlace && <><Header style={{margin:5}}>{firstPlace.name}</Header>
+        <FirstPlaceScore>{firstPlace.score}p</FirstPlaceScore></>}
+      </FirstPlaceContainer>
+     
+      <OrderedList start="2">
+        {slicedHighscore.map((score, index) => {
           return (
             <List key={index}>
               {score.name} <TotalScore>{score.score}p</TotalScore>
