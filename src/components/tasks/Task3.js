@@ -3,17 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { sortableContainer, sortableElement } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 
-<<<<<<< HEAD
 import { Vehicles } from 'components/Vehicles';
 import { CompletedTask } from 'components/CompletedTask';
 import { game } from 'reducers/game';
-import { TaskContainer } from 'components/StyledComponents';
-=======
-import { Vehicles } from "components/Vehicles";
-import { CompletedTask } from "components/CompletedTask";
-import { game } from "reducers/game";
-import { TaskContainer, Button } from "components/StyledComponents";
->>>>>>> styling--2
+import { TaskContainer, Button } from 'components/StyledComponents';
 
 export const Task3 = () => {
 	const dispatch = useDispatch();
@@ -56,22 +49,20 @@ export const Task3 = () => {
 		//Send answer to redux and/or backend
 	};
 
-<<<<<<< HEAD
 	return (
 		<>
 			{!answer && (
 				<TaskContainer>
 					<h1>{question.question}</h1>
-
 					<div>
 						<SortableVehiclesContainer axis="y" onSortEnd={onSortEnd}>
 							{vehicle.map((item, index) => (
 								<SortableVehicle key={item} vehicle={item} index={index} />
 							))}
 						</SortableVehiclesContainer>
-						<button type="button" onClick={() => handleOnClick()}>
+						<Button type="button" onClick={() => handleOnClick()}>
 							Klar
-						</button>
+						</Button>
 					</div>
 				</TaskContainer>
 			)}
@@ -85,33 +76,4 @@ export const Task3 = () => {
 			)}
 		</>
 	);
-=======
-  return (
-    <>
-      {!answer && (
-        <TaskContainer>
-          <h1>{question.question}</h1>
-          <div>
-            <SortableVehiclesContainer axis="y" onSortEnd={onSortEnd}>
-              {vehicle.map((item, index) => (
-                <SortableVehicle key={item} vehicle={item} index={index} />
-              ))}
-            </SortableVehiclesContainer>
-            <Button type="button" onClick={() => handleOnClick()}>
-              Klar
-            </Button>
-          </div>
-        </TaskContainer>
-      )}
-      {answer && (
-        <CompletedTask
-          isCorrect={isCorrect}
-          answer={answer}
-          setAnswer={setAnswer}
-          why={question.why}
-        />
-      )}
-    </>
-  );
->>>>>>> styling--2
 };
