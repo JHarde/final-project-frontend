@@ -9,6 +9,7 @@ import {
   Title,
   Paragraph,
   Image,
+  StyledLink
 } from "components/StyledComponents";
 import { fetchQuestions } from "reducers/game";
 
@@ -31,8 +32,8 @@ export const Start = () => {
       <Link to="/gameboard">
         <Button onClick={startGame}>Spela som gäst</Button>
       </Link>
-      <Link to="/signup">Skapa konto
-      </Link>
+      <StyledLink to="/signup">Skapa nytt konto
+      </StyledLink>
     </Container>
   );
 };

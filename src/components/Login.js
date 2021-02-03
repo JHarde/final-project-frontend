@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 
-import { Container, Button, FormLabel, HighscoreInput, ErrorParagraph, Paragraph } from 'components/StyledComponents'
+import { Container, Button, FormLabel, Input, ErrorParagraph, Paragraph, StyledLink } from 'components/StyledComponents'
 import { user } from "reducers/user"
 import { GameBoard } from "components/GameBoard"
 
@@ -50,14 +50,14 @@ export const Login = () => {
             <Container>
                 <form>
                     <FormLabel>Användarnamn
-                        <HighscoreInput
+                        <Input
                         type="text"
                         value={username}
                         onChange={event => setUsername(event.target.value)}
                         placeholder="Användarnamn" />
                     </FormLabel>
                     <FormLabel>Lösenord
-                        <HighscoreInput
+                        <Input
                         type="password"
                         value={password}
                         onChange={event => setPassword(event.target.value)}
@@ -69,7 +69,7 @@ export const Login = () => {
                     <Button type="submit" onClick={handleLogIn}>Logga In</Button>
                 </form>
                 {userInfo.error &&
-                    <Paragraph>{<Link to="/signup">Skapa nytt konto</Link>}</Paragraph>}
+                    <Paragraph>{<StyledLink to="/signup">Skapa nytt konto?</StyledLink>}</Paragraph>}
             </Container>
         
         )
