@@ -6,6 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import MultiBackend, {
 	TouchTransition,
 	createTransition,
+	Preview,
 } from 'react-dnd-multi-backend';
 
 import { DragAndDropContainer } from 'components/DragAndDropContainer';
