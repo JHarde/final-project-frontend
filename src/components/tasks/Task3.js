@@ -54,6 +54,7 @@ export const Task3 = () => {
 			{!answer && (
 				<TaskContainer>
 					<h1>{question.question}</h1>
+
 					<div>
 						<SortableVehiclesContainer axis="y" onSortEnd={onSortEnd}>
 							{vehicle.map((item, index) => (
