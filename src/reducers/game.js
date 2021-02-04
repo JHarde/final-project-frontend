@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   highscore: [],
-  questions: [],
+  questions: JSON.parse(localStorage.getItem("questions")) || [],
   userScore: 0,
 };
 
@@ -16,6 +16,9 @@ export const game = createSlice({
 
     setQuestions: (store, action) => {
       store.questions = action.payload;
+
+      localStorage.setItem("questions", JSON.stringify(store.questions));
+      console.log(store.questions);
     },
 
     setUserScore: (store, action) => {
