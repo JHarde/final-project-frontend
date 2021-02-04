@@ -7,6 +7,8 @@ import { CompletedTask } from 'components/CompletedTask';
 import { Box } from 'components/Box';
 import { Dustbin } from 'components/Dustbin';
 import { game } from 'reducers/game';
+import { postScore } from "reducers/user";
+
 
 // const ItemTypes = {
 // 	PLASTIC: 'Plast',
@@ -19,6 +21,8 @@ import { game } from 'reducers/game';
 export const DragAndDropContainer = () => {
 	const dispatch = useDispatch();
 	const question = useSelector((store) => store.game.questions[2]);
+	const accessToken = useSelector((store) => store.user.accessToken);
+	const userId = useSelector((store) => store.user.userId);
 	console.log(question);
 	const trash = question.answers;
 	const trashcans = question.correctAnswer;
@@ -63,7 +67,11 @@ export const DragAndDropContainer = () => {
 	const handleOnClick = () => {
 		if (droppedBoxNames.length === 10) {
 			setIsCorrect(true);
-			dispatch(game.actions.setGuestScore(guestScore + 1));
+			if(accessToken){
+				dispatch(postScore(userId, 1))
+			  } else {
+			  dispatch(game.actions.setGuestScore(guestScore + 1));
+			  };
 		} else {
 			setIsCorrect(false);
 		}

@@ -31,31 +31,18 @@ export const EndGame = () => {
 	const [isSent, setIsSent] = useState(false);
 
 	const sendScore = (event) => {
-		if(accessToken){
-			fetch('https://environmental-kids-game.herokuapp.com/highscore', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ name: avatarName, score: score }),
-		})
-			.then((res) => res.json())
-			.then((res) => {
-				console.log(res);
-				setIsSent(true);
-			});
-		}
-		else{
-		// dispatch(postHighscore(avatarName, guestScore));
+		//Get the logged in user's name to POST instead of avatarName
+
 		fetch('https://environmental-kids-game.herokuapp.com/highscore', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ name: avatarName, score: guestScore }),
+			body: JSON.stringify({ name: avatarName, score: accessToken ? score : guestScore }),
 		})
 			.then((res) => res.json())
 			.then((res) => {
 				console.log(res);
 				setIsSent(true);
 			});
-		}
 		event.preventDefault();
 
 	};
@@ -63,12 +50,12 @@ export const EndGame = () => {
 	return (
 		<EndGameContainer>
 			<HeaderScoreContainer>
-				<HeaderScore>{guestScore}</HeaderScore>
+				<HeaderScore>{accessToken ? score : guestScore}</HeaderScore>
 				<ScoreParagraph>poäng</ScoreParagraph>
 			</HeaderScoreContainer>
 
 			<Header>Vill du vara med på topplistan?</Header>
-			<form>
+			<form>{!accessToken &&
 				<HighscoreLabel>
 					Vad heter din Avatar?
 					<Input
@@ -78,7 +65,7 @@ export const EndGame = () => {
 						placeholder="Skriv ett namn här"
 						maxLength="20"
 					/>
-				</HighscoreLabel>
+				</HighscoreLabel>}
 				<Button type="submit" onClick={sendScore} style={{fontSize: 27}}>
 					Skicka till topplista
 				</Button>
