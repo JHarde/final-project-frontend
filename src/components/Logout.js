@@ -1,10 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { Button, TextButton } from 'components/StyledComponents'
 import { user } from 'reducers/user'
 
 export const Logout = ({button}) => {
+    const history = useHistory();
     const dispatch = useDispatch();
     const userId = useSelector(store => store.user.userId);
     const accessToken = useSelector(store => store.user.accessToken);
@@ -14,13 +16,14 @@ export const Logout = ({button}) => {
         fetch(LOGOUT_URL, {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
-            body: JSON.stringify({_id: userId})
+            body: JSON.stringify({userId: userId})
         })
         .then((res) => res.json())
         .then((json) => {
             dispatch(user.actions.logOut());
             //Local storage log out
             console.log(json);
+            history.push("/")
         })
     }
 
