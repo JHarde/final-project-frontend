@@ -66,8 +66,8 @@ export const EndGame = () => {
 					Skicka till topplista
 				</Button>
 			</form>
-			
-			<Logout button/>
+			{accessToken &&
+			<Logout button/>}
 			{/* <Link to="/">
 				{' '}
 				 Nollställa state/redux?
