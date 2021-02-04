@@ -25,7 +25,25 @@ export const user = createSlice({
         logOut: (store, action) => {
             store.userId = 0;
             store.accessToken = null;
+            store.score = 0;
 
         }
     }
-})
+});
+
+export const postScore = (userId) => {
+    return (dispatch) => {
+    fetch("https://environmental-kids-game.herokuapp.com/userscore", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId: userId }),
+    })
+      .then((res) => res.json())
+      .then((score) => {
+        console.log(score);
+        dispatch(user.actions.setScore(score));
+        
+      });
+    };
+  };
+  

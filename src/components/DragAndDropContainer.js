@@ -23,7 +23,7 @@ export const DragAndDropContainer = () => {
 	const trash = question.answers;
 	const trashcans = question.correctAnswer;
 
-	const score = useSelector((store) => store.game.userScore);
+	const guestScore = useSelector((store) => store.game.guestScore);
 
 	const [answer, setAnswer] = useState();
 	const [isCorrect, setIsCorrect] = useState(false);
@@ -63,7 +63,7 @@ export const DragAndDropContainer = () => {
 	const handleOnClick = () => {
 		if (droppedBoxNames.length === 10) {
 			setIsCorrect(true);
-			dispatch(game.actions.setUserScore(score + 1));
+			dispatch(game.actions.setGuestScore(guestScore + 1));
 		} else {
 			setIsCorrect(false);
 		}

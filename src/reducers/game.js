@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   highscore: [],
   questions: [],
-  userScore: 0,
+  guestScore: 0,
 };
 
 export const game = createSlice({
@@ -18,8 +18,8 @@ export const game = createSlice({
       store.questions = action.payload;
     },
 
-    setUserScore: (store, action) => {
-      store.userScore = action.payload;
+    setGuestScore: (store, action) => {
+      store.guestScore = action.payload;
     },
   },
 });
@@ -55,3 +55,4 @@ export const postHighscore = (name, score) => {
       console.log(res);
     });
 };
+

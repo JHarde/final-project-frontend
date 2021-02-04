@@ -16,29 +16,46 @@ import {
 } from 'components/StyledComponents';
 import { fetchHighscore, postHighscore } from 'reducers/game';
 import { user } from 'reducers/user';
+import { game } from 'reducers/user';
 import { Highscore } from 'components/Highscore'
 import { Logout } from 'components/Logout'
 
 export const EndGame = () => {
 	const dispatch = useDispatch();
-	const userScore = useSelector((store) => store.game.userScore);
+	const guestScore = useSelector((store) => store.game.guestScore);
 	const accessToken = useSelector((store) => store.user.accessToken);
+	const score = useSelector((store) => store.user.score)
+	const userId = useSelector((store) => store.user.userId)
+
 	const [avatarName, setAvatarName] = useState('');
 	const [isSent, setIsSent] = useState(false);
 
 	const sendScore = (event) => {
-		// dispatch(postHighscore(avatarName, userScore));
-		fetch('https://environmental-kids-game.herokuapp.com/highscore', {
+		if(accessToken){
+			fetch('https://environmental-kids-game.herokuapp.com/highscore', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ name: avatarName, score: userScore }),
+			body: JSON.stringify({ name: avatarName, score: score }),
 		})
 			.then((res) => res.json())
 			.then((res) => {
 				console.log(res);
 				setIsSent(true);
 			});
-
+		}
+		else{
+		// dispatch(postHighscore(avatarName, guestScore));
+		fetch('https://environmental-kids-game.herokuapp.com/highscore', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ name: avatarName, score: guestScore }),
+		})
+			.then((res) => res.json())
+			.then((res) => {
+				console.log(res);
+				setIsSent(true);
+			});
+		}
 		event.preventDefault();
 
 	};
@@ -46,7 +63,7 @@ export const EndGame = () => {
 	return (
 		<EndGameContainer>
 			<HeaderScoreContainer>
-				<HeaderScore>{userScore}</HeaderScore>
+				<HeaderScore>{guestScore}</HeaderScore>
 				<ScoreParagraph>poäng</ScoreParagraph>
 			</HeaderScoreContainer>
 

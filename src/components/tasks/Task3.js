@@ -11,7 +11,7 @@ import { TaskContainer, Button, VehicleContainer } from 'components/StyledCompon
 export const Task3 = () => {
 	const dispatch = useDispatch();
 
-	const score = useSelector((store) => store.game.userScore);
+	const guestScore = useSelector((store) => store.game.guestScore);
 
 	const question = useSelector((store) => store.game.questions[1]);
 
@@ -41,7 +41,7 @@ export const Task3 = () => {
 
 		if (equals(vehicle, correctAnswersArray)) {
 			setIsCorrect(true);
-			dispatch(game.actions.setUserScore(score + 1));
+			dispatch(game.actions.setGuestScore(guestScore + 1));
 		} else {
 			setIsCorrect(false);
 		}
