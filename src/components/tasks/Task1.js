@@ -22,7 +22,7 @@ export const Task1 = () => {
     if (answer === question.correctAnswer[0]) {
       setIsCorrect(true);
       if(accessToken){
-        dispatch(postScore(userId))
+        dispatch(postScore(userId, 1))
       } else {
       dispatch(game.actions.setGuestScore(guestScore + 1));
       }

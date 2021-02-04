@@ -31,12 +31,12 @@ export const user = createSlice({
     }
 });
 
-export const postScore = (userId) => {
+export const postScore = (userId, scoreNumber) => {
     return (dispatch) => {
     fetch("https://environmental-kids-game.herokuapp.com/userscore", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ userId: userId }),
+      body: JSON.stringify({ userId: userId, scoreNumber: scoreNumber }),
     })
       .then((res) => res.json())
       .then((score) => {
