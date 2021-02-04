@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Container, Button, FormLabel, Input, ErrorParagraph, Paragraph, StyledLink } from 'components/StyledComponents'
 import { user } from "reducers/user"
+import { game } from "reducers/game"
 import { GameBoard } from "components/GameBoard"
 
 export const Login = () => {
@@ -12,6 +13,7 @@ export const Login = () => {
     const [password, setPassword] = useState("")
     const [userInfo, setUserInfo] = useState("")
     const accessToken = useSelector(store => store.user.accessToken)
+    const score = useSelector(store => store.user.score)
     const dispatch = useDispatch()
     const LOGIN_URL = "https://environmental-kids-game.herokuapp.com/sessions"
 
@@ -21,6 +23,9 @@ export const Login = () => {
         )
         dispatch(
             user.actions.setUserId(userInfo)
+        )
+        dispatch(
+            user.actions.setScore(userInfo)
         )
         
         //Send to GameBoard.js

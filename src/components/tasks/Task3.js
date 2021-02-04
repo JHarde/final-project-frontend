@@ -6,15 +6,16 @@ import arrayMove from 'array-move';
 import { Vehicles } from 'components/Vehicles';
 import { CompletedTask } from 'components/CompletedTask';
 import { game } from 'reducers/game';
+import { postScore } from "reducers/user";
 import { TaskContainer, Button, VehicleContainer } from 'components/StyledComponents';
 
 export const Task3 = () => {
 	const dispatch = useDispatch();
 
-	const score = useSelector((store) => store.game.userScore);
-
+	const guestScore = useSelector((store) => store.game.guestScore);
 	const question = useSelector((store) => store.game.questions[1]);
-
+	const userId = useSelector((store) => store.user.userId);
+	const accessToken = useSelector((store) => store.user.accessToken);
 	const [answer, setAnswer] = useState();
 	const [isCorrect, setIsCorrect] = useState(false);
 
@@ -41,7 +42,11 @@ export const Task3 = () => {
 
 		if (equals(vehicle, correctAnswersArray)) {
 			setIsCorrect(true);
-			dispatch(game.actions.setUserScore(score + 1));
+			if(accessToken){
+				dispatch(postScore(userId, 1))
+			  } else {
+			  dispatch(game.actions.setGuestScore(guestScore + 1));
+			  }
 		} else {
 			setIsCorrect(false);
 		}

@@ -27,7 +27,6 @@ export const Highscore = () => {
   const highscore = useSelector((store) => store.game.highscore);
   const slicedHighscore = highscore.slice(1,6);
   const firstPlace = highscore[0]
-  console.log(firstPlace ? firstPlace.name : 'hej')
   
   return (
     <Container>
@@ -48,7 +47,7 @@ export const Highscore = () => {
           );
         })}
       </OrderedList>
-      <Link to="/">
+      <Link to="/gameboard">
 				{' '}
 				{/* Nollställa state/redux? */}
 				<Button>Spela igen</Button>

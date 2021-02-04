@@ -16,29 +16,33 @@ import {
 } from 'components/StyledComponents';
 import { fetchHighscore, postHighscore } from 'reducers/game';
 import { user } from 'reducers/user';
+import { game } from 'reducers/user';
 import { Highscore } from 'components/Highscore'
 import { Logout } from 'components/Logout'
 
 export const EndGame = () => {
 	const dispatch = useDispatch();
-	const userScore = useSelector((store) => store.game.userScore);
+	const guestScore = useSelector((store) => store.game.guestScore);
 	const accessToken = useSelector((store) => store.user.accessToken);
+	const score = useSelector((store) => store.user.score)
+	const userId = useSelector((store) => store.user.userId)
+
 	const [avatarName, setAvatarName] = useState('');
 	const [isSent, setIsSent] = useState(false);
 
 	const sendScore = (event) => {
-		// dispatch(postHighscore(avatarName, userScore));
+		//Get the logged in user's name to POST instead of avatarName
+
 		fetch('https://environmental-kids-game.herokuapp.com/highscore', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ name: avatarName, score: userScore }),
+			body: JSON.stringify({ name: avatarName, score: accessToken ? score : guestScore }),
 		})
 			.then((res) => res.json())
 			.then((res) => {
 				console.log(res);
 				setIsSent(true);
 			});
-
 		event.preventDefault();
 
 	};
@@ -46,12 +50,12 @@ export const EndGame = () => {
 	return (
 		<EndGameContainer>
 			<HeaderScoreContainer>
-				<HeaderScore>{userScore}</HeaderScore>
+				<HeaderScore>{accessToken ? score : guestScore}</HeaderScore>
 				<ScoreParagraph>poäng</ScoreParagraph>
 			</HeaderScoreContainer>
 
 			<Header>Vill du vara med på topplistan?</Header>
-			<form>
+			<form>{!accessToken &&
 				<HighscoreLabel>
 					Vad heter din Avatar?
 					<Input
@@ -61,7 +65,7 @@ export const EndGame = () => {
 						placeholder="Skriv ett namn här"
 						maxLength="20"
 					/>
-				</HighscoreLabel>
+				</HighscoreLabel>}
 				<Button type="submit" onClick={sendScore} style={{fontSize: 27}}>
 					Skicka till topplista
 				</Button>
