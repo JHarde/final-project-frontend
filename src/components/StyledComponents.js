@@ -210,6 +210,18 @@ export const Image = styled.img`
 	width: 75%;
 `;
 
+export const VehicleImage = styled.img`
+	width: 135px;
+`;
+
+export const VehicleContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+`;
+
 export const Trash = styled.div`
 	background-color: ${blue};
 	color: ${beige};

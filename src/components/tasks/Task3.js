@@ -6,7 +6,7 @@ import arrayMove from 'array-move';
 import { Vehicles } from 'components/Vehicles';
 import { CompletedTask } from 'components/CompletedTask';
 import { game } from 'reducers/game';
-import { TaskContainer, Button } from 'components/StyledComponents';
+import { TaskContainer, Button, VehicleContainer } from 'components/StyledComponents';
 
 export const Task3 = () => {
 	const dispatch = useDispatch();
@@ -25,7 +25,7 @@ export const Task3 = () => {
 	const [vehicle, setVehicle] = useState(vehicles);
 
 	const SortableVehiclesContainer = sortableContainer(({ children }) => (
-		<div>{children}</div>
+		<VehicleContainer>{children}</VehicleContainer>
 	));
 
 	const SortableVehicle = sortableElement(({ vehicle }) => (
@@ -54,7 +54,7 @@ export const Task3 = () => {
 			{!answer && (
 				<TaskContainer>
 					<h1>{question.question}</h1>
-					<div>
+					<VehicleContainer>
 						<SortableVehiclesContainer axis="y" onSortEnd={onSortEnd}>
 							{vehicle.map((item, index) => (
 								<SortableVehicle key={item} vehicle={item} index={index} />
@@ -63,7 +63,7 @@ export const Task3 = () => {
 						<Button type="button" onClick={() => handleOnClick()}>
 							Klar
 						</Button>
-					</div>
+					</VehicleContainer>
 				</TaskContainer>
 			)}
 			{answer && (

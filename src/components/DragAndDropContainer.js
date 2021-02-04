@@ -77,6 +77,16 @@ export const DragAndDropContainer = () => {
 		<>
 			{!answer && (
 				<TaskContainer>
+					<TrashContainer style={{ overflow: 'hidden', clear: 'both' }}>
+						{boxes.map(({ name, type }, index) => (
+							<Box
+								name={name}
+								type={type}
+								isDropped={isDropped(name)}
+								key={index}
+							/>
+						))}
+					</TrashContainer>
 					<DustbinContainer style={{ overflow: 'hidden', clear: 'both' }}>
 						{dustbins.map(({ accepts, lastDroppedItem, image }, index) => (
 							<Dustbin
@@ -88,16 +98,7 @@ export const DragAndDropContainer = () => {
 							/>
 						))}
 					</DustbinContainer>
-					<TrashContainer style={{ overflow: 'hidden', clear: 'both' }}>
-						{boxes.map(({ name, type }, index) => (
-							<Box
-								name={name}
-								type={type}
-								isDropped={isDropped(name)}
-								key={index}
-							/>
-						))}
-					</TrashContainer>
+
 					<Button type="button" onClick={() => handleOnClick()}>
 						Klar
 					</Button>

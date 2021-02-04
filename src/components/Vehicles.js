@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { VehicleImage } from 'components/StyledComponents';
+
 export const Vehicles = ({ vehicle }) => {
 	let image = null;
 	switch (vehicle) {
@@ -22,5 +24,5 @@ export const Vehicles = ({ vehicle }) => {
 			image = null;
 	}
 
-	return <img src={require(`../assets/${image}`)} />;
+	return <VehicleImage src={require(`../assets/${image}`)} />;
 };
