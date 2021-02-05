@@ -51,12 +51,16 @@ export const Start = () => {
 						<Paragraph>Superkort information om spelet och klimatet</Paragraph>
 
 						{/* Fix semantic/accessibility */}
-						<Link to="/login">
-							<Button>Logga in</Button>
-						</Link>
-						<Link to="/gameboard">
-							<Button onClick={startGame}>Spela som gäst</Button>
-						</Link>
+						<div>
+							{' '}
+							<Link to="/login">
+								<Button>Logga in</Button>
+							</Link>
+							<Link to="/gameboard">
+								<Button onClick={startGame}>Spela som gäst</Button>
+							</Link>
+						</div>
+
 						<StyledLink to="/signup">Skapa nytt konto</StyledLink>
 					</DesktopLogin>
 				</Container>
