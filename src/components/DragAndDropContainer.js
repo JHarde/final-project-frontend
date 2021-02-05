@@ -2,21 +2,17 @@ import React, { useState, useCallback } from 'react';
 import update from 'immutability-helper';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { TaskContainer, TrashContainer, Button, DustbinContainer } from 'components/StyledComponents';
+import {
+	TaskContainer,
+	TrashContainer,
+	Button,
+	DustbinContainer,
+} from 'components/StyledComponents';
 import { CompletedTask } from 'components/CompletedTask';
 import { Box } from 'components/Box';
 import { Dustbin } from 'components/Dustbin';
 import { game } from 'reducers/game';
-import { postScore } from "reducers/user";
-
-
-// const ItemTypes = {
-// 	PLASTIC: 'Plast',
-// 	GLASS: 'Glas',
-// 	PAPER: 'Papper',
-// 	WELLPAPP: 'Kartong',
-// 	METAL: 'Metall',
-// };
+import { postScore } from 'reducers/user';
 
 export const DragAndDropContainer = () => {
 	const dispatch = useDispatch();
@@ -67,11 +63,11 @@ export const DragAndDropContainer = () => {
 	const handleOnClick = () => {
 		if (droppedBoxNames.length === 10) {
 			setIsCorrect(true);
-			if(accessToken){
-				dispatch(postScore(userId, 1))
-			  } else {
-			  dispatch(game.actions.setGuestScore(guestScore + 1));
-			  };
+			if (accessToken) {
+				dispatch(postScore(userId, 1));
+			} else {
+				dispatch(game.actions.setGuestScore(guestScore + 1));
+			}
 		} else {
 			setIsCorrect(false);
 		}

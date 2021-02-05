@@ -1,39 +1,66 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import Earth_Happy from "../assets/Earth_Happy.svg";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
+
+import Earth_Happy from '../assets/Earth_Happy.svg';
 
 import {
-  Container,
-  Button,
-  Title,
-  Paragraph,
-  Image,
-  StyledLink
-} from "components/StyledComponents";
-import { fetchQuestions } from "reducers/game";
+	Container,
+	Button,
+	Title,
+	Paragraph,
+	Image,
+	StyledLink,
+	DesktopLogin,
+} from 'components/StyledComponents';
+import { fetchQuestions } from 'reducers/game';
 
 export const Start = () => {
-  const dispatch = useDispatch();
-  const startGame = () => {
-    dispatch(fetchQuestions());
-  };
+	const dispatch = useDispatch();
+	const startGame = () => {
+		dispatch(fetchQuestions());
+	};
 
-  return (
-    <Container>
-      <Image src={Earth_Happy} />
-      <Title>Klimatspelet</Title>
-      <Paragraph>Superkort information om spelet och klimatet</Paragraph>
+	const isDesktopOrLapTop = useMediaQuery({ query: '(min-width: 769px)' });
+	const isMobileOrTablet = useMediaQuery({ query: '(max-width: 768px)' });
 
-      {/* Fix semantic/accessibility */}
-      <Link to="/login">
-        <Button>Logga in</Button>
-      </Link>
-      <Link to="/gameboard">
-        <Button onClick={startGame}>Spela som gäst</Button>
-      </Link>
-      <StyledLink to="/signup">Skapa nytt konto
-      </StyledLink>
-    </Container>
-  );
+	return (
+		<>
+			{isMobileOrTablet && (
+				<Container>
+					<Image src={Earth_Happy} />
+					<Title>Klimatspelet</Title>
+					<Paragraph>Superkort information om spelet och klimatet</Paragraph>
+
+					{/* Fix semantic/accessibility */}
+					<Link to="/login">
+						<Button>Logga in</Button>
+					</Link>
+					<Link to="/gameboard">
+						<Button onClick={startGame}>Spela som gäst</Button>
+					</Link>
+					<StyledLink to="/signup">Skapa nytt konto</StyledLink>
+				</Container>
+			)}
+			{isDesktopOrLapTop && (
+				<Container>
+					<Image src={Earth_Happy} />
+					<DesktopLogin>
+						<Title>Klimatspelet</Title>
+						<Paragraph>Superkort information om spelet och klimatet</Paragraph>
+
+						{/* Fix semantic/accessibility */}
+						<Link to="/login">
+							<Button>Logga in</Button>
+						</Link>
+						<Link to="/gameboard">
+							<Button onClick={startGame}>Spela som gäst</Button>
+						</Link>
+						<StyledLink to="/signup">Skapa nytt konto</StyledLink>
+					</DesktopLogin>
+				</Container>
+			)}
+		</>
+	);
 };

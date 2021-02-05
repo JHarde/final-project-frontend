@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
+import { DustbinImage } from 'components/StyledComponents';
 
 export const Dustbin = ({ accept, onDrop, image }) => {
 	const [{ isOver, canDrop }, drop] = useDrop({
@@ -21,7 +22,7 @@ export const Dustbin = ({ accept, onDrop, image }) => {
 				<div style={{ width: 100 }} />
 			)}
 
-			<img src={require(`../assets/${image}`)} alt="Trashcan" />
+			<DustbinImage src={require(`../assets/${image}`)} alt="Trashcan" />
 		</div>
 	);
 };

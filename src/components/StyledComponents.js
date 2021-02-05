@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const blue = '#223A59';
 const darkBlue = '#0B1D34';
@@ -19,11 +19,28 @@ export const Container = styled.section`
 	color: ${beige};
 	box-sizing: border-box;
 	padding: 20px;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+	}
+`;
+
+export const DesktopLogin = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+	margin: 100px;
 `;
 
 export const TaskContainer = styled(Container)`
 	background-color: ${beige};
 	color: ${blue};
+
+	@media (min-width: 768px) {
+		flex-direction: column;
+	}
 `;
 
 export const EndGameContainer = styled(Container)`
@@ -39,7 +56,7 @@ export const Header = styled.h1`
 
 export const TaskHeader = styled(Header)`
 	color: ${blue};
-	`;
+`;
 
 export const Title = styled(Header)`
 	font-weight: 900;
@@ -54,7 +71,7 @@ export const HeaderScore = styled.h1`
 	color: ${blue};
 	font-weight: 900;
 	line-height: 90px;
-	`;
+`;
 
 export const HeaderScoreContainer = styled.div`
 	display: flex;
@@ -71,7 +88,6 @@ export const Paragraph = styled.p`
 	text-align: center;
 	color: ${beige};
 	font-size: 24px;
-	
 `;
 
 export const SmallerParagraph = styled(Paragraph)`
@@ -106,11 +122,11 @@ export const StyledLink = styled(Link)`
 export const TextButton = styled.button`
 	background-color: ${blue};
 	color: ${beige};
-	font-size: 20px; 
-	border: none; 
+	font-size: 20px;
+	border: none;
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
-`
+`;
 
 export const FormLabel = styled.label`
 	display: flex;
@@ -132,7 +148,7 @@ export const OrderedList = styled.ol`
 
 export const List = styled.li`
 	color: ${beige};
-	border-bottom: 0.2px solid #0B1D34;
+	border-bottom: 0.2px solid #0b1d34;
 	padding: 15px;
 	font-size: 24px;
 
@@ -140,7 +156,6 @@ export const List = styled.li`
 		color: ${red};
 		font-size: 18px;
 	}
-
 `;
 
 export const TotalScore = styled.span`
@@ -168,7 +183,7 @@ export const Input = styled.input`
 
 	::placeholder {
 		font-size: 20px;
-		color: #BDB29E;
+		color: #bdb29e;
 	}
 `;
 
@@ -208,6 +223,10 @@ export const SmallButton = styled(Button)`
 
 export const Image = styled.img`
 	width: 75%;
+
+	@media (min-width: 768px) {
+		width: 30%;
+	}
 `;
 
 export const VehicleImage = styled.img`
@@ -219,7 +238,6 @@ export const VehicleContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 `;
 
 export const Trash = styled.div`
@@ -236,6 +254,11 @@ export const TrashContainer = styled.div`
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
+
+	@media (min-width: 768px) {
+		width: 50%;
+		margin: 50px;
+	}
 `;
 
 export const DustbinContainer = styled.div`
@@ -244,8 +267,14 @@ export const DustbinContainer = styled.div`
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
+`;
 
-`; 
+export const DustbinImage = styled.img`
+	@media (min-width: 768px) {
+		height: 150px;
+		margin: 10px;
+	}
+`;
 
 export const FirstPlaceCirkel = styled.div`
 	width: 110px;

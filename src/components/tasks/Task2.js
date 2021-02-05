@@ -40,7 +40,8 @@ export const Task2 = () => {
 			)}
 			{isMobileOrTablet && (
 				<DndProvider backend={MultiBackend} options={Touch}>
-					<DragAndDropContainer />
+     <DragAndDropContainer />
+     <Preview generator={this.generatePreview} />
 				</DndProvider>
 			)}
 		</>
