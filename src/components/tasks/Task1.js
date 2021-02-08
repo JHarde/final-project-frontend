@@ -44,7 +44,7 @@ export const Task1 = () => {
 			{' '}
 			{!answer && (
 				<TaskContainer>
-					<Task1Image src={Tandborstning} />
+					<Task1Image src={Tandborstning} alt="Toothbrush" />
 					<TaskHeader>{question.question}</TaskHeader>
 					{/* <p>{question.description}</p> */}
 					{question.answers.map((answer) => {
