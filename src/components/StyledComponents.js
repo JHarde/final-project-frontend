@@ -46,6 +46,21 @@ export const TaskContainer = styled(Container)`
 export const EndGameContainer = styled(Container)`
 	text-align: center;
 	color: ${beige};
+	display: flex;
+	flex-direction: column;
+`;
+
+export const HighscoreContainer = styled(Container)`
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 768px) {
+		padding: 100px;
+	}
+
+	@media (min-width: 1024px) {
+		padding: 300px;
+	}
 `;
 
 export const Header = styled.h1`
@@ -62,6 +77,14 @@ export const Title = styled(Header)`
 	font-weight: 900;
 	font-size: 42px;
 	margin-bottom: 10px;
+`;
+
+export const CompletedTaskButtonContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	padding: 75px;
+	justify-content: center;
+	align-items: center;
 `;
 
 export const HeaderScore = styled.h1`
@@ -227,6 +250,10 @@ export const Image = styled.img`
 	@media (min-width: 768px) {
 		width: 30%;
 	}
+`;
+
+export const Task1Image = styled.img`
+	height: 300px;
 `;
 
 export const VehicleImage = styled.img`
