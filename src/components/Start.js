@@ -28,8 +28,8 @@ export const Start = () => {
 	return (
 		<>
 			{isMobileOrTablet && (
-				<Container>
-					<Image src={Earth_Happy} />
+				<Container role="main">
+					<Image src={Earth_Happy} alt="Happy Earth" />
 					<Title>Klimatspelet</Title>
 					<Paragraph>Superkort information om spelet och klimatet</Paragraph>
 
