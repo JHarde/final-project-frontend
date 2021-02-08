@@ -19,13 +19,13 @@ export const GameBoard = () => {
       {accessToken && <Logout />}
       <h1>Välj Spel</h1>
       <Link to="/task1">
-        <GameCategory>Spel 1</GameCategory>
+        <GameCategory color="beige">Vatten</GameCategory>
       </Link>
       <Link to="/task2">
-        <GameCategory color="red">Spel 2</GameCategory>
+        <GameCategory color="red">Återvinning</GameCategory>
       </Link>
       <Link to="/task3">
-        <GameCategory>Spel 3</GameCategory>
+        <GameCategory>Resande</GameCategory>
       </Link>
     </Container>
   );

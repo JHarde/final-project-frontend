@@ -7,7 +7,7 @@ import { Vehicles } from 'components/Vehicles';
 import { CompletedTask } from 'components/CompletedTask';
 import { game } from 'reducers/game';
 import { postScore } from "reducers/user";
-import { TaskContainer, Button, VehicleContainer } from 'components/StyledComponents';
+import { TaskContainer, Button, VehicleContainer, TaskHeader, TaskParagraph } from 'components/StyledComponents';
 
 export const Task3 = () => {
 	const dispatch = useDispatch();
@@ -54,21 +54,27 @@ export const Task3 = () => {
 		//Send answer to redux and/or backend
 	};
 
+	console.log(question)
+
 	return (
 		<>
 			{!answer && (
 				<TaskContainer>
-					<h1>{question.question}</h1>
+					<div>
+						<TaskHeader>{question.question}</TaskHeader>
+						<TaskParagraph>Rangordna bilderna efter hur klimatsmarta de är med den mest klimatsmarta överst</TaskParagraph>
+					</div>
 					<VehicleContainer>
 						<SortableVehiclesContainer axis="y" onSortEnd={onSortEnd}>
 							{vehicle.map((item, index) => (
 								<SortableVehicle key={item} vehicle={item} index={index} />
 							))}
 						</SortableVehiclesContainer>
-						<Button type="button" onClick={() => handleOnClick()}>
-							Klar
-						</Button>
 					</VehicleContainer>
+					<Button type="button" onClick={() => handleOnClick()}>
+						Klar
+					</Button>
+					
 				</TaskContainer>
 			)}
 			{answer && (
