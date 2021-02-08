@@ -15,7 +15,7 @@ export const Container = styled.section`
 	justify-content: center;
 	align-items: center;
 	background-color: ${blue};
-	height: 100vh;
+	min-height: 100vh;
 	color: ${beige};
 	box-sizing: border-box;
 	padding: 20px;
@@ -37,10 +37,12 @@ export const DesktopLogin = styled.div`
 export const TaskContainer = styled(Container)`
 	background-color: ${beige};
 	color: ${blue};
+	justify-content: space-between;
 
 	@media (min-width: 768px) {
 		flex-direction: column;
 	}
+
 `;
 
 export const EndGameContainer = styled(Container)`
@@ -71,6 +73,7 @@ export const Header = styled.h1`
 
 export const TaskHeader = styled(Header)`
 	color: ${blue};
+	margin: 15px;
 `;
 
 export const Title = styled(Header)`
@@ -111,6 +114,11 @@ export const Paragraph = styled.p`
 	text-align: center;
 	color: ${beige};
 	font-size: 24px;
+`;
+
+export const TaskParagraph = styled(Paragraph)`
+	color: ${blue};
+	margin: 5px;
 `;
 
 export const SmallerParagraph = styled(Paragraph)`
@@ -226,8 +234,8 @@ export const Button = styled.button`
 
 export const GameCategory = styled(Button)`
 	height: 155px;
-	background-color: ${(props) => (props.color === 'red' ? red : lightGreen)};
-	box-shadow: 3px 5px ${(props) => (props.color === 'red' ? brown : green)};
+	background-color: ${(props) => (props.color === 'red' ? red : props.color === 'beige' ? beige : lightGreen)};
+	box-shadow: 3px 5px ${(props) => (props.color === 'red' ? brown : props.color === 'beige' ? '#CDC5B5' : green)};
 `;
 
 export const TaskButton = styled(Button)`

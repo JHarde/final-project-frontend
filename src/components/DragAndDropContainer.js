@@ -2,12 +2,7 @@ import React, { useState, useCallback } from 'react';
 import update from 'immutability-helper';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-	TaskContainer,
-	TrashContainer,
-	Button,
-	DustbinContainer,
-} from 'components/StyledComponents';
+import { TaskContainer, TrashContainer, Button, DustbinContainer, TaskHeader, TaskParagraph } from 'components/StyledComponents';
 import { CompletedTask } from 'components/CompletedTask';
 import { Box } from 'components/Box';
 import { Dustbin } from 'components/Dustbin';
@@ -81,6 +76,10 @@ export const DragAndDropContainer = () => {
 		<>
 			{!answer && (
 				<TaskContainer>
+					<div>
+						<TaskHeader>{question.question}</TaskHeader>
+						<TaskParagraph>Lägg skräpet i rätt behållare</TaskParagraph>
+					</div>
 					<TrashContainer style={{ overflow: 'hidden', clear: 'both' }}>
 						{boxes.map(({ name, type }, index) => (
 							<Box

@@ -27,13 +27,13 @@ export const GameBoard = () => {
 						<Title>Välj Spel</Title>
 						<div>
 							<Link to="/task1">
-								<GameCategory>Spel 1</GameCategory>
+								<GameCategory color="beige">Vatten</GameCategory>
 							</Link>
 							<Link to="/task2">
-								<GameCategory color="red">Spel 2</GameCategory>
+								<GameCategory color="red">Återvinning</GameCategory>
 							</Link>
 							<Link to="/task3">
-								<GameCategory>Spel 3</GameCategory>
+								<GameCategory>Resande</GameCategory>
 							</Link>
 						</div>
 					</div>
@@ -45,13 +45,13 @@ export const GameBoard = () => {
 					{accessToken && <Logout />}
 					<Title>Välj Spel</Title>
 					<Link to="/task1">
-						<GameCategory>Spel 1</GameCategory>
+						<GameCategory color="beige">Vatten</GameCategory>
 					</Link>
 					<Link to="/task2">
-						<GameCategory color="red">Spel 2</GameCategory>
+						<GameCategory color="red">Återvinning</GameCategory>
 					</Link>
 					<Link to="/task3">
-						<GameCategory>Spel 3</GameCategory>
+						<GameCategory>Resande</GameCategory>
 					</Link>
 				</Container>
 			)}
