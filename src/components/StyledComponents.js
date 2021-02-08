@@ -41,6 +41,7 @@ export const TaskContainer = styled(Container)`
 
 	@media (min-width: 768px) {
 		flex-direction: column;
+		justify-content: center;
 	}
 
 `;
