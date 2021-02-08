@@ -25,6 +25,35 @@ export const Container = styled.section`
 	}
 `;
 
+export const AboutUsContainer = styled.section`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	min-height: 100vh;
+	background-color: ${beige};
+	padding: 50px;
+`;
+
+export const PersonContainer = styled.section`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+`;
+
+export const ProfileImage = styled.img`
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
+	border-radius: 50%;
+`;
+
+export const ProfileImageContainer = styled.div`
+	width: 200px;
+	height: 200px;
+`;
+
 export const DesktopLogin = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -43,7 +72,6 @@ export const TaskContainer = styled(Container)`
 		flex-direction: column;
 		justify-content: center;
 	}
-
 `;
 
 export const EndGameContainer = styled(Container)`
@@ -235,8 +263,15 @@ export const Button = styled.button`
 
 export const GameCategory = styled(Button)`
 	height: 155px;
-	background-color: ${(props) => (props.color === 'red' ? red : props.color === 'beige' ? beige : lightGreen)};
-	box-shadow: 3px 5px ${(props) => (props.color === 'red' ? brown : props.color === 'beige' ? '#CDC5B5' : green)};
+	background-color: ${(props) =>
+		props.color === 'red' ? red : props.color === 'beige' ? beige : lightGreen};
+	box-shadow: 3px 5px
+		${(props) =>
+			props.color === 'red'
+				? brown
+				: props.color === 'beige'
+				? '#CDC5B5'
+				: green};
 `;
 
 export const TaskButton = styled(Button)`
