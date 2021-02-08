@@ -26,6 +26,8 @@ export const EndGame = () => {
 	const accessToken = useSelector((store) => store.user.accessToken);
 	const score = useSelector((store) => store.user.score)
 	const userId = useSelector((store) => store.user.userId)
+	const userName = useSelector((store) => store.user.userName)
+
 
 	const [avatarName, setAvatarName] = useState('');
 	const [isSent, setIsSent] = useState(false);
@@ -36,7 +38,7 @@ export const EndGame = () => {
 		fetch('https://environmental-kids-game.herokuapp.com/highscore', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ name: avatarName, score: accessToken ? score : guestScore }),
+			body: JSON.stringify({ name: accessToken ? userName : avatarName, score: accessToken ? score : guestScore }),
 		})
 			.then((res) => res.json())
 			.then((res) => {

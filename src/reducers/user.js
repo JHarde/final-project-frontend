@@ -4,6 +4,7 @@ const initialState = {
   accessToken: localStorage.accessToken || null,
   userId: localStorage.userId || 0,
   score: localStorage.score || 0,
+  userName: localStorage.userName || ""
 };
 
 export const user = createSlice({
@@ -25,12 +26,19 @@ export const user = createSlice({
       store.userId = userId;
       localStorage.setItem("userId", userId);
     },
+    setUserName: (store, action) => {
+      const { userName } = action.payload;
+      store.userName = userName;
+      localStorage.setItem("userName", userName);
+    },
     logOut: (store, action) => {
       store.userId = 0;
       store.accessToken = null;
       store.score = 0;
+      store.userName = "";
       localStorage.removeItem("userId");
       localStorage.removeItem("accessToken");
+      localStorage.removeItem("userName");
     },
   },
 });

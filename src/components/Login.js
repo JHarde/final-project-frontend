@@ -27,6 +27,9 @@ export const Login = () => {
         dispatch(
             user.actions.setScore(userInfo)
         )
+        dispatch(
+            user.actions.setUserName(userInfo)
+        )
         
         //Send to GameBoard.js
     }
