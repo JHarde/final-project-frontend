@@ -8,28 +8,51 @@ A game built in React aimed towards children to create awarness of and interest 
 5. When statified choose to end the game and send your result to the highscore list
 
 ## Process
+We set the basic structure and sketch of MVP in Figma before starting to code. This helped us to know where to start and made it easier to divide the tasks.
+We worked in branches and merged when needed without any major issues. This also helped in making the process smooth and made it possible to work on different tasks at the same time. We used React and Redux as a base for the frontend and Node.js and express for the backend. 
 
+### Frontend
+Our MVP was to have three questions a user could play and then send their score to the highscore, without Login. 
+We fetched the questions from our backend and used useState and conditional rendering to handle the response to show different pages depending on the answer.
+We use dispatch to update the score in redux if the answer was correct.
+After testing in CodePen we used two different libraries for the drag and drop functions. ......
+The user can choose to end the game and then will be shown a oppurtunity to send their score to the highscore list together with a chosen user name. 
+
+When this was in place we made a more final design of the UI in Figma and styled accordingly with styled components and imported cutom made illustrations. 
+
+We then proceeded to our strech goal of having a user signup and login. Using an Accesstoken from the backend to see if the user is logged in or not, we use conditional rendering to adjust the UI if the user is logged in or not. For example to show a logout button, hide the input of user name when sending score to highscore (and instead sending the user's name from taken from the database). When logged in the score is stored and updated directly in the user database using POST and then sent to Redux using dispatch.
+
+### Backend
+We have three different collections made with MongoDB and mongoose: the questions, highscore and user information. 
+Enpoints, filter etc...
 
 ## Tech
-- React
+- React & React Hooks
 - Redux
+- React Router
 - JavaScript
-- Node.js
 - CSS
 - HTML
 
-### Libraries (?)
-- React dnd - drag and drop
-- Styled Components
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+
+### Libraries
+- React dnd-html-backend (Drag and Drop)
+- React dnd-touch-backend (Drag and Drop)
+- React Sortable Hoc (Drag and drop)
+- React Responsive
 
 ## Accessibility
 
 ## View it live
-https://confident-mahavira-8d4c23.netlify.app/
+https://klimatspelet.netlify.app/
 
 ## Backend 
 Github: https://github.com/JHarde/final-project-backend
 Heroku: https://environmental-kids-game.herokuapp.com/
 
 ## Made by
-Lillemor Eriksson, Joel Harde, Cornelia Ryås
+[Lillemor Eriksson](https://github.com/LillanEriksson), [Joel Harde](https://github.com/JHarde), [Cornelia Ryås](https://github.com/Corneliaryas)
