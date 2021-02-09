@@ -16,7 +16,7 @@ export const GameBoard = () => {
 
 	useEffect(() => {
 		dispatch(fetchQuestions());
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<>

@@ -4,7 +4,6 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { useMediaQuery } from 'react-responsive';
 import MultiBackend, {
-	TouchTransition,
 	createTransition,
 	Preview,
 } from 'react-dnd-multi-backend';
@@ -40,8 +39,8 @@ export const Task2 = () => {
 			)}
 			{isMobileOrTablet && (
 				<DndProvider backend={MultiBackend} options={Touch}>
-     <DragAndDropContainer />
-     <Preview generator={this.generatePreview} />
+					<DragAndDropContainer />
+					<Preview />
 				</DndProvider>
 			)}
 		</>

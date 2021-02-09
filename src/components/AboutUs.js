@@ -25,8 +25,7 @@ export const AboutUs = () => {
 					<a
 						href="https://www.linkedin.com/in/corneliaryas/"
 						target="_blank"
-						rel="noopener
-						noreferrer">
+						rel="noopener noreferrer">
 						<img
 							src="https://img.icons8.com/color/48/000000/linkedin.png"
 							alt="LinkedIn"
@@ -35,8 +34,7 @@ export const AboutUs = () => {
 					<a
 						href="https://github.com/Corneliaryas"
 						target="_blank"
-						rel="noopener
-						noreferrer">
+						rel="noopener noreferrer">
 						<img
 							src="https://img.icons8.com/fluent/48/000000/github.png"
 							alt="Github"
@@ -45,8 +43,7 @@ export const AboutUs = () => {
 					<a
 						href="https://frontend.corneliaryas.com/"
 						target="_blank"
-						rel="noopener
-						noreferrer">
+						rel="noopener noreferrer">
 						<img
 							src="https://img.icons8.com/ios/50/000000/webpage.png"
 							alt="Portfolio"
@@ -70,8 +67,7 @@ export const AboutUs = () => {
 					<a
 						href="https://www.linkedin.com/in/joelharde/"
 						target="_blank"
-						rel="noopener
-						noreferrer">
+						rel="noopener noreferrer">
 						<img
 							src="https://img.icons8.com/color/48/000000/linkedin.png"
 							alt="LinkedIn"
@@ -80,8 +76,7 @@ export const AboutUs = () => {
 					<a
 						href="https://github.com/JHarde"
 						target="_blank"
-						rel="noopener
-						noreferrer">
+						rel="noopener noreferrer">
 						<img
 							src="https://img.icons8.com/fluent/48/000000/github.png"
 							alt="Github"
@@ -90,8 +85,7 @@ export const AboutUs = () => {
 					<a
 						href="https://joelhardeportfolio.netlify.app/"
 						target="_blank"
-						rel="noopener
-						noreferrer">
+						rel="noopener noreferrer">
 						<img
 							src="https://img.icons8.com/ios/50/000000/webpage.png"
 							alt="Portfolio"
@@ -119,8 +113,7 @@ export const AboutUs = () => {
 					<a
 						href="https://www.linkedin.com/in/lillemor-eriksson/"
 						target="_blank"
-						rel="noopener
-						noreferrer">
+						rel="noopener noreferrer">
 						<img
 							src="https://img.icons8.com/color/48/000000/linkedin.png"
 							alt="LinkedIn"
@@ -129,8 +122,7 @@ export const AboutUs = () => {
 					<a
 						href="https://github.com/LillanEriksson"
 						target="_blank"
-						rel="noopener
-						noreferrer">
+						rel="noopener noreferrer">
 						<img
 							src="https://img.icons8.com/fluent/48/000000/github.png"
 							alt="Github"
@@ -139,8 +131,7 @@ export const AboutUs = () => {
 					<a
 						href="https://www.lillemoreriksson.com/"
 						target="_blank"
-						rel="noopener
-						noreferrer">
+						rel="noopener noreferrer">
 						<img
 							src="https://img.icons8.com/ios/50/000000/webpage.png"
 							alt="Portfolio"
