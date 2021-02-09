@@ -24,7 +24,9 @@ We then proceeded to our strech goal of having a user signup and login. Using an
 
 ### Backend
 We have three different collections made with MongoDB and mongoose: the questions, highscore and user information. 
-Enpoints, filter etc...
+We have both GET and POST endpoints for highscore, and use filter to only send the top 10 in the response. 
+We have a GET endpoit for the questions that lists all of them together with the answers and description. 
+We have POST endpoints for login, signup and logout. Signup (/users) creates a user using the User model created with mongoose and encrypts the password using bcrypt and pre schema. The Login (/sessions) verifies username and password sent from frontend and generates a new accesstoken. Logout finds the user by ID and resets the accesstoken to null. The last endpoint is a POST for user score that finds the user by ID and updated it's score and send the updated value in the reponse. 
 
 ## Tech
 - React & React Hooks
