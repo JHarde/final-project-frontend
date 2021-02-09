@@ -14,21 +14,21 @@ export const Task2 = () => {
 	const isDesktopOrLapTop = useMediaQuery({ query: '(min-width: 769px)' });
 	const isMobileOrTablet = useMediaQuery({ query: '(max-width: 768px)' });
 
-	const TouchTransition = createTransition('touchstart', (event) => {
-		return event.touches != null;
-	});
+	// const TouchTransition = createTransition('touchstart', (event) => {
+	// 	return event.touches != null;
+	// });
 
-	const Touch = {
-		backends: [
-			{ backend: HTML5Backend },
-			{
-				backend: TouchBackend,
-				options: { enableMouseEvents: true },
-				preview: true,
-				transition: TouchTransition,
-			},
-		],
-	};
+	// const Touch = {
+	// 	backends: [
+	// 		{ backend: HTML5Backend },
+	// 		{
+	// 			backend: TouchBackend,
+	// 			options: { enableMouseEvents: true },
+	// 			preview: true,
+	// 			transition: TouchTransition,
+	// 		},
+	// 	],
+	// };
 
 	return (
 		<>
@@ -38,9 +38,8 @@ export const Task2 = () => {
 				</DndProvider>
 			)}
 			{isMobileOrTablet && (
-				<DndProvider backend={MultiBackend} options={Touch}>
+				<DndProvider backend={TouchBackend}>
 					<DragAndDropContainer />
-					<Preview />
 				</DndProvider>
 			)}
 		</>
