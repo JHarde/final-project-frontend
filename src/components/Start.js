@@ -13,6 +13,7 @@ import {
 	Image,
 	StyledLink,
 	DesktopLogin,
+	StartButtonContainer,
 } from 'components/StyledComponents';
 import { fetchQuestions } from 'reducers/game';
 
@@ -51,7 +52,7 @@ export const Start = () => {
 						<Paragraph>Superkort information om spelet och klimatet</Paragraph>
 
 						{/* Fix semantic/accessibility */}
-						<div>
+						<StartButtonContainer>
 							{' '}
 							<Link to="/login">
 								<Button>Logga in</Button>
@@ -59,7 +60,7 @@ export const Start = () => {
 							<Link to="/gameboard">
 								<Button onClick={startGame}>Spela som gäst</Button>
 							</Link>
-						</div>
+						</StartButtonContainer>
 
 						<StyledLink to="/signup">Skapa nytt konto</StyledLink>
 					</DesktopLogin>

@@ -25,14 +25,35 @@ export const Container = styled.section`
 	}
 `;
 
-export const AboutUsContainer = styled.section`
+export const StartButtonContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 
+	@media (min-width: 1024px) {
+		flex-direction: row;
+	}
+`;
+
+export const AboutUsContainer = styled.section`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	min-height: 100vh;
 	background-color: ${beige};
 	padding: 50px;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+`;
+
+export const ContactIconsContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	margin: 10px;
+	width: 50%;
 `;
 
 export const PersonContainer = styled.section`
@@ -40,6 +61,10 @@ export const PersonContainer = styled.section`
 	flex-direction: column;
 	align-items: center;
 	padding: 10px;
+
+	@media (min-width: 1024px) {
+		width: 30%;
+	}
 `;
 
 export const ProfileImage = styled.img`
@@ -47,6 +72,10 @@ export const ProfileImage = styled.img`
 	height: auto;
 	object-fit: contain;
 	border-radius: 50%;
+`;
+
+export const ProfileText = styled.section`
+	max-width: 600px;
 `;
 
 export const ProfileImageContainer = styled.div`
