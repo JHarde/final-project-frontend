@@ -10,6 +10,7 @@ import {
 	Input,
 	HeaderScoreContainer,
 	ScoreParagraph,
+	ErrorParagraph,
 } from 'components/StyledComponents';
 import { Highscore } from 'components/Highscore';
 import { Logout } from 'components/Logout';
@@ -22,8 +23,10 @@ export const EndGame = () => {
 
 	const [avatarName, setAvatarName] = useState('');
 	const [isSent, setIsSent] = useState(false);
+	const [errorMessage, setErrorMessage] = useState('')
 
 	const sendScore = (event) => {
+		if (avatarName || accessToken) {
 		fetch('https://environmental-kids-game.herokuapp.com/highscore', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -36,7 +39,11 @@ export const EndGame = () => {
 			.then((res) => {
 				console.log(res);
 				setIsSent(true);
+				setErrorMessage('')
 			});
+		} else {
+			setErrorMessage('Skriv in ett namn i rutan')
+		}
 		event.preventDefault();
 	};
 	if (!isSent) {
@@ -58,8 +65,12 @@ export const EndGame = () => {
 								onChange={(event) => setAvatarName(event.target.value)}
 								placeholder="Skriv ett namn här"
 								maxLength="20"
+								minLength="2"
+								required
 							/>
+							<ErrorParagraph>{errorMessage}</ErrorParagraph>
 						</HighscoreLabel>
+						
 					)}
 					<Button type="submit" onClick={sendScore} style={{ fontSize: 27 }}>
 						Skicka till topplista
