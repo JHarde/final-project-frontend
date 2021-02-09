@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 
-import { Container, GameCategory, Title } from 'components/StyledComponents';
+import { Container, GameCategory, Title, CategoryImage, CategoryText } from 'components/StyledComponents';
 import { fetchQuestions } from 'reducers/game';
 import { Logout } from 'components/Logout';
+import WaterDrop from '../assets/WaterDrop.svg';
+import Bike from '../assets/Bike_Silhouette.svg';
+import Recycle from '../assets/Recycle.svg';
+
 
 export const GameBoard = () => {
 	const dispatch = useDispatch();
@@ -27,13 +31,22 @@ export const GameBoard = () => {
 						<Title>Välj Spel</Title>
 						<div>
 							<Link to="/task1">
-								<GameCategory color="beige">Vatten</GameCategory>
+								<GameCategory color="beige">
+									<CategoryImage src={WaterDrop} alt="Water" />
+									<CategoryText>Vatten</CategoryText>
+								</GameCategory>
 							</Link>
 							<Link to="/task2">
-								<GameCategory color="red">Återvinning</GameCategory>
+								<GameCategory color="red">
+									<CategoryImage src={Recycle} alt="Recycle" />
+									<CategoryText>Återvinning</CategoryText>
+								</GameCategory>
 							</Link>
 							<Link to="/task3">
-								<GameCategory>Resande</GameCategory>
+								<GameCategory>
+									<CategoryImage src={Bike} alt="Bike" />
+									<CategoryText>Resande</CategoryText>
+								</GameCategory>
 							</Link>
 						</div>
 					</div>
@@ -45,13 +58,22 @@ export const GameBoard = () => {
 					{accessToken && <Logout />}
 					<Title>Välj Spel</Title>
 					<Link to="/task1">
-						<GameCategory color="beige">Vatten</GameCategory>
+					<GameCategory color="beige">
+						<CategoryImage src={WaterDrop} alt="Water" />
+						<CategoryText>Vatten</CategoryText>
+					</GameCategory>
 					</Link>
 					<Link to="/task2">
-						<GameCategory color="red">Återvinning</GameCategory>
+						<GameCategory color="red">
+							<CategoryImage src={Recycle} alt="Recycle" />
+							<CategoryText>Återvinning</CategoryText>
+						</GameCategory>
 					</Link>
 					<Link to="/task3">
-						<GameCategory>Resande</GameCategory>
+						<GameCategory>
+							<CategoryImage src={Bike} alt="Bike" />
+							<CategoryText>Resande</CategoryText>
+						</GameCategory>
 					</Link>
 				</Container>
 			)}

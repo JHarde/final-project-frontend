@@ -140,6 +140,11 @@ export const Title = styled(Header)`
 	margin-bottom: 10px;
 `;
 
+export const CategoryText = styled(Header)`
+	margin: 0;
+	color: ${blue};
+`;
+
 export const CompletedTaskButtonContainer = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -292,8 +297,14 @@ export const Button = styled.button`
 
 export const GameCategory = styled(Button)`
 	height: 155px;
+	box-sizing: border-box;
+	padding: 5px;
 	background-color: ${(props) =>
-		props.color === 'red' ? red : props.color === 'beige' ? beige : lightGreen};
+		props.color === 'red' 
+		? red 
+		: props.color === 'beige' 
+		? beige 
+		: lightGreen};
 	box-shadow: 3px 5px
 		${(props) =>
 			props.color === 'red'
@@ -323,6 +334,11 @@ export const Image = styled.img`
 	@media (min-width: 768px) {
 		width: 30%;
 	}
+`;
+
+export const CategoryImage = styled.img`
+	width: 60%;
+	height: 60%;
 `;
 
 export const Task1Image = styled.img`
