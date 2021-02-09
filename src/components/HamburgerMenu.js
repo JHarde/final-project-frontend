@@ -15,23 +15,30 @@ export const HamburgerMenu = () => {
 				<div></div>
 			</HamburgerButton>
 			{activeMenu && (
-				<div>
-					<ul>
-						<li>
-							<Link to="/">Start </Link>
-						</li>
-						<li>
-							<Link to="/highscore">Highscore</Link>
-						</li>
-						<li>
-							<Link to="/aboutus">Om oss</Link>
-						</li>
-					</ul>
-				</div>
+				<HamburgerMenuContainer>
+					<Link to="/">Start </Link>
+
+					<Link to="/highscore">Highscore</Link>
+
+					<Link to="/aboutus">Om oss</Link>
+				</HamburgerMenuContainer>
 			)}
 		</>
 	);
 };
+
+const HamburgerMenuContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #f2ede4;
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+`;
+
+//den röda färgen på div'arna
 
 const HamburgerButton = styled.button`
 	position: absolute;
@@ -45,6 +52,7 @@ const HamburgerButton = styled.button`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	z-index: 1;
 
 	div {
 		width: 50px;
