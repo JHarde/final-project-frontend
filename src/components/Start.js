@@ -33,8 +33,6 @@ export const Start = () => {
 					<Image src={Earth_Happy} alt="Happy Earth" />
 					<Title>Klimatspelet</Title>
 					<Paragraph>Superkort information om spelet och klimatet</Paragraph>
-
-					{/* Fix semantic/accessibility */}
 					<Link to="/login">
 						<Button>Logga in</Button>
 					</Link>
@@ -50,10 +48,7 @@ export const Start = () => {
 					<DesktopLogin>
 						<Title>Klimatspelet</Title>
 						<Paragraph>Superkort information om spelet och klimatet</Paragraph>
-
-						{/* Fix semantic/accessibility */}
 						<StartButtonContainer>
-							{' '}
 							<Link to="/login">
 								<Button>Logga in</Button>
 							</Link>

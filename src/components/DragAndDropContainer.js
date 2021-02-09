@@ -2,7 +2,14 @@ import React, { useState, useCallback } from 'react';
 import update from 'immutability-helper';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { TaskContainer, TrashContainer, Button, DustbinContainer, TaskHeader, TaskParagraph } from 'components/StyledComponents';
+import {
+	TaskContainer,
+	TrashContainer,
+	Button,
+	DustbinContainer,
+	TaskHeader,
+	TaskParagraph,
+} from 'components/StyledComponents';
 import { CompletedTask } from 'components/CompletedTask';
 import { Box } from 'components/Box';
 import { Dustbin } from 'components/Dustbin';
@@ -14,7 +21,7 @@ export const DragAndDropContainer = () => {
 	const question = useSelector((store) => store.game.questions[2]);
 	const accessToken = useSelector((store) => store.user.accessToken);
 	const userId = useSelector((store) => store.user.userId);
-	console.log(question);
+
 	const trash = question.answers;
 	const trashcans = question.correctAnswer;
 
@@ -23,11 +30,7 @@ export const DragAndDropContainer = () => {
 	const [answer, setAnswer] = useState();
 	const [isCorrect, setIsCorrect] = useState(false);
 	const [dustbins, setDustbins] = useState(trashcans);
-
-	//dustbins lastdroppeditem -> push lastdroppeditem to a array for each type
-
 	const [boxes] = useState(trash);
-
 	const [droppedBoxNames, setDroppedBoxNames] = useState([]);
 
 	function isDropped(boxName) {
@@ -52,8 +55,6 @@ export const DragAndDropContainer = () => {
 		},
 		[droppedBoxNames, dustbins]
 	);
-	// console.log(`Dropped boxes ${droppedBoxNames}`);
-	// console.log(`Dustbins ${dustbins}`);
 
 	const handleOnClick = () => {
 		if (droppedBoxNames.length === 10) {
@@ -67,10 +68,7 @@ export const DragAndDropContainer = () => {
 			setIsCorrect(false);
 		}
 		setAnswer(droppedBoxNames);
-		//Send answer to redux and/or backend
 	};
-
-	console.log(dustbins);
 
 	return (
 		<>

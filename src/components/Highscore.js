@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import {
-	Container,
 	Header,
 	List,
 	TotalScore,
@@ -52,8 +51,6 @@ export const Highscore = () => {
 				})}
 			</OrderedList>
 			<Link to="/gameboard">
-				{' '}
-				{/* Nollställa state/redux? */}
 				<Button>Spela igen</Button>
 			</Link>
 		</HighscoreContainer>

@@ -6,8 +6,14 @@ import arrayMove from 'array-move';
 import { Vehicles } from 'components/Vehicles';
 import { CompletedTask } from 'components/CompletedTask';
 import { game } from 'reducers/game';
-import { postScore } from "reducers/user";
-import { TaskContainer, Button, VehicleContainer, TaskHeader, TaskParagraph } from 'components/StyledComponents';
+import { postScore } from 'reducers/user';
+import {
+	TaskContainer,
+	Button,
+	VehicleContainer,
+	TaskHeader,
+	TaskParagraph,
+} from 'components/StyledComponents';
 
 export const Task3 = () => {
 	const dispatch = useDispatch();
@@ -38,23 +44,19 @@ export const Task3 = () => {
 
 	const handleOnClick = (answer) => {
 		const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
-		console.log(equals(vehicle, correctAnswersArray));
 
 		if (equals(vehicle, correctAnswersArray)) {
 			setIsCorrect(true);
-			if(accessToken){
-				dispatch(postScore(userId, 1))
-			  } else {
-			  dispatch(game.actions.setGuestScore(guestScore + 1));
-			  }
+			if (accessToken) {
+				dispatch(postScore(userId, 1));
+			} else {
+				dispatch(game.actions.setGuestScore(guestScore + 1));
+			}
 		} else {
 			setIsCorrect(false);
 		}
 		setAnswer(vehicle);
-		//Send answer to redux and/or backend
 	};
-
-	console.log(question)
 
 	return (
 		<>
@@ -62,7 +64,10 @@ export const Task3 = () => {
 				<TaskContainer>
 					<div>
 						<TaskHeader>{question.question}</TaskHeader>
-						<TaskParagraph>Rangordna bilderna efter hur klimatsmarta de är med den mest klimatsmarta överst</TaskParagraph>
+						<TaskParagraph>
+							Rangordna bilderna efter hur klimatsmarta de är med den mest
+							klimatsmarta överst
+						</TaskParagraph>
 					</div>
 					<VehicleContainer>
 						<SortableVehiclesContainer axis="y" onSortEnd={onSortEnd}>
@@ -74,7 +79,6 @@ export const Task3 = () => {
 					<Button type="button" onClick={() => handleOnClick()}>
 						Klar
 					</Button>
-					
 				</TaskContainer>
 			)}
 			{answer && (

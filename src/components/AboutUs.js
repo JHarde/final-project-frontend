@@ -10,15 +10,9 @@ import {
 } from './StyledComponents';
 
 export const AboutUs = () => {
-	//link to portfolios
-	//our pitches
-	//what we done in this app
-	//photos of us
-	//link to our LinkedIns
 	return (
 		<AboutUsContainer>
 			<PersonContainer>
-				{' '}
 				<ProfileImageContainer>
 					<ProfileImage
 						src={require('../assets/Cornelia.png')}
@@ -31,8 +25,8 @@ export const AboutUs = () => {
 					<a
 						href="https://www.linkedin.com/in/corneliaryas/"
 						target="_blank"
-						noopener
-						noreferrer>
+						rel="noopener
+						noreferrer">
 						<img
 							src="https://img.icons8.com/color/48/000000/linkedin.png"
 							alt="LinkedIn"
@@ -41,15 +35,18 @@ export const AboutUs = () => {
 					<a
 						href="https://github.com/Corneliaryas"
 						target="_blank"
-						noopener
-						noreferrer>
-						<img src="https://img.icons8.com/fluent/48/000000/github.png" />
+						rel="noopener
+						noreferrer">
+						<img
+							src="https://img.icons8.com/fluent/48/000000/github.png"
+							alt="Github"
+						/>
 					</a>
 					<a
 						href="https://frontend.corneliaryas.com/"
 						target="_blank"
-						noopener
-						noreferrer>
+						rel="noopener
+						noreferrer">
 						<img
 							src="https://img.icons8.com/ios/50/000000/webpage.png"
 							alt="Portfolio"
@@ -65,18 +62,16 @@ export const AboutUs = () => {
 				</ProfileText>
 			</PersonContainer>
 			<PersonContainer>
-				{' '}
 				<ProfileImageContainer>
 					<ProfileImage src={require('../assets/Joel.png')} alt="Joel" />
 				</ProfileImageContainer>
 				<h1>Joel Harde</h1> <p>Frontend-developer/lärare</p>
 				<ContactIconsContainer>
-					{' '}
 					<a
 						href="https://www.linkedin.com/in/joelharde/"
 						target="_blank"
-						noopener
-						noreferrer>
+						rel="noopener
+						noreferrer">
 						<img
 							src="https://img.icons8.com/color/48/000000/linkedin.png"
 							alt="LinkedIn"
@@ -85,15 +80,18 @@ export const AboutUs = () => {
 					<a
 						href="https://github.com/JHarde"
 						target="_blank"
-						noopener
-						noreferrer>
-						<img src="https://img.icons8.com/fluent/48/000000/github.png" />
+						rel="noopener
+						noreferrer">
+						<img
+							src="https://img.icons8.com/fluent/48/000000/github.png"
+							alt="Github"
+						/>
 					</a>
 					<a
 						href="https://joelhardeportfolio.netlify.app/"
 						target="_blank"
-						noopener
-						noreferrer>
+						rel="noopener
+						noreferrer">
 						<img
 							src="https://img.icons8.com/ios/50/000000/webpage.png"
 							alt="Portfolio"
@@ -118,12 +116,11 @@ export const AboutUs = () => {
 				<h1>Lillemor Eriksson</h1>
 				<p>Frontend-developer/entreprenör</p>
 				<ContactIconsContainer>
-					{' '}
 					<a
 						href="https://www.linkedin.com/in/lillemor-eriksson/"
 						target="_blank"
-						noopener
-						noreferrer>
+						rel="noopener
+						noreferrer">
 						<img
 							src="https://img.icons8.com/color/48/000000/linkedin.png"
 							alt="LinkedIn"
@@ -132,15 +129,18 @@ export const AboutUs = () => {
 					<a
 						href="https://github.com/LillanEriksson"
 						target="_blank"
-						noopener
-						noreferrer>
-						<img src="https://img.icons8.com/fluent/48/000000/github.png" />
+						rel="noopener
+						noreferrer">
+						<img
+							src="https://img.icons8.com/fluent/48/000000/github.png"
+							alt="Github"
+						/>
 					</a>
 					<a
 						href="https://www.lillemoreriksson.com/"
 						target="_blank"
-						noopener
-						noreferrer>
+						rel="noopener
+						noreferrer">
 						<img
 							src="https://img.icons8.com/ios/50/000000/webpage.png"
 							alt="Portfolio"

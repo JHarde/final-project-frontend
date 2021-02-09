@@ -16,8 +16,6 @@ export const CompletedTask = ({ isCorrect, answer, setAnswer, why }) => {
 	const isDesktopOrLapTop = useMediaQuery({ query: '(min-width: 769px)' });
 	const isMobileOrTablet = useMediaQuery({ query: '(max-width: 768px)' });
 
-	console.log(isCorrect, answer);
-
 	return (
 		<>
 			{isMobileOrTablet && (

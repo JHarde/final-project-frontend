@@ -4,16 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
 	TaskContainer,
 	TaskButton,
-	Image,
-	Header,
 	TaskHeader,
 	Task1Image,
 } from 'components/StyledComponents';
 import { CompletedTask } from 'components/CompletedTask';
 import { game } from 'reducers/game';
-import { user } from 'reducers/user';
-import Tandborstning from '../../assets/Tandborstning.svg';
 import { postScore } from 'reducers/user';
+
+import Tandborstning from '../../assets/Tandborstning.svg';
 
 export const Task1 = () => {
 	const dispatch = useDispatch();
@@ -36,17 +34,14 @@ export const Task1 = () => {
 			setIsCorrect(false);
 		}
 		setAnswer(answer);
-		//Send answer to redux and/or backend
 	};
 
 	return (
 		<>
-			{' '}
 			{!answer && (
 				<TaskContainer>
 					<Task1Image src={Tandborstning} alt="Toothbrush" />
 					<TaskHeader>{question.question}</TaskHeader>
-					{/* <p>{question.description}</p> */}
 					{question.answers.map((answer) => {
 						return (
 							<TaskButton

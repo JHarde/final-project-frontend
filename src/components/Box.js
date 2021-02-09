@@ -1,25 +1,15 @@
-import React from "react";
-import { useDrag } from "react-dnd";
+import React from 'react';
+import { useDrag } from 'react-dnd';
 
-import { Trash } from "components/StyledComponents";
-
-const style = {
-  border: "1px dashed gray",
-  backgroundColor: "white",
-  padding: "0.5rem 1rem",
-  marginRight: "1.5rem",
-  marginBottom: "1.5rem",
-  cursor: "move",
-  float: "left",
-};
+import { Trash } from 'components/StyledComponents';
 
 export const Box = ({ name, type, isDropped }) => {
-  const [{ opacity }, drag] = useDrag({
-    item: { name, type },
-    collect: (monitor) => ({
-      opacity: monitor.isDragging() ? 0.4 : 1,
-    }),
-  });
+	const [{ opacity }, drag] = useDrag({
+		item: { name, type },
+		collect: (monitor) => ({
+			opacity: monitor.isDragging() ? 0.4 : 1,
+		}),
+	});
 
-  return <Trash ref={drag}>{isDropped ? <s>{name}</s> : name}</Trash>;
+	return <Trash ref={drag}>{isDropped ? <s>{name}</s> : name}</Trash>;
 };
