@@ -25,73 +25,6 @@ export const Container = styled.section`
 	}
 `;
 
-export const StartButtonContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	@media (min-width: 1024px) {
-		flex-direction: row;
-	}
-`;
-
-export const AboutUsContainer = styled.section`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	min-height: 100vh;
-	background-color: ${beige};
-	padding: 50px;
-
-	@media (min-width: 768px) {
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-`;
-
-export const ContactIconsContainer = styled.div`
-	display: flex;
-	justify-content: space-between;
-	margin: 10px;
-	width: 50%;
-`;
-
-export const PersonContainer = styled.section`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 10px;
-
-	@media (min-width: 1024px) {
-		width: 30%;
-	}
-`;
-
-export const ProfileImage = styled.img`
-	max-width: 100%;
-	height: auto;
-	object-fit: contain;
-	border-radius: 50%;
-`;
-
-export const ProfileText = styled.section`
-	max-width: 600px;
-`;
-
-export const ProfileImageContainer = styled.div`
-	width: 200px;
-	height: 200px;
-`;
-
-export const DesktopLogin = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 50px;
-	margin: 100px;
-`;
-
 export const TaskContainer = styled(Container)`
 	background-color: ${beige};
 	color: ${blue};
@@ -119,8 +52,141 @@ export const HighscoreContainer = styled(Container)`
 	}
 
 	@media (min-width: 1024px) {
-		padding: 300px;
+		padding: 50px 300px;
 	}
+`;
+
+export const AboutUsContainer = styled.section`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: ${beige};
+	padding: 50px;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+`;
+
+export const StartButtonContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@media (min-width: 1024px) {
+		flex-direction: row;
+	}
+`;
+
+export const ContactIconsContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	margin: 10px;
+	width: 50%;
+`;
+
+export const PersonContainer = styled.section`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+
+	@media (min-width: 1024px) {
+		width: 30%;
+	}
+`;
+
+export const ProfileImageContainer = styled.div`
+	width: 200px;
+	height: 200px;
+`;
+
+export const CompletedTaskButtonContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	padding: 75px;
+	justify-content: center;
+	align-items: center;
+`;
+
+export const HeaderScoreContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: ${lightGreen};
+	border-radius: 50%;
+	height: 218px;
+	width: 218px;
+`;
+
+export const VehicleContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+export const TrashContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	@media (min-width: 768px) {
+		width: 50%;
+		margin: 50px;
+	}
+`;
+
+export const DustbinContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+`;
+
+export const Trash = styled.div`
+	background-color: ${blue};
+	color: ${beige};
+	padding: 10px;
+	border-radius: 20px;
+	margin: 4px;
+`;
+
+export const ProfileText = styled.section`
+	max-width: 600px;
+`;
+
+export const DesktopLogin = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+	margin: 100px;
+`;
+
+export const FirstPlaceCirkel = styled.div`
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	background-color: ${red};
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+`;
+
+export const FirstPlaceContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 `;
 
 export const Header = styled.h1`
@@ -145,14 +211,6 @@ export const CategoryText = styled(Header)`
 	color: ${blue};
 `;
 
-export const CompletedTaskButtonContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	padding: 75px;
-	justify-content: center;
-	align-items: center;
-`;
-
 export const HeaderScore = styled.h1`
 	font-size: 100px;
 	margin: 0;
@@ -162,16 +220,6 @@ export const HeaderScore = styled.h1`
 	line-height: 90px;
 `;
 
-export const HeaderScoreContainer = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	background-color: ${lightGreen};
-	border-radius: 50%;
-	height: 218px;
-	width: 218px;
-`;
 
 export const Paragraph = styled.p`
 	text-align: center;
@@ -205,53 +253,6 @@ export const ErrorParagraph = styled.p`
 	padding: 0 10px;
 `;
 
-export const StyledLink = styled(Link)`
-	color: ${beige};
-	font-weight: bold;
-	text-decoration: none;
-	font-size: 24px;
-	margin: 10px;
-`;
-
-export const TextButton = styled.button`
-	background-color: ${blue};
-	color: ${beige};
-	font-size: 20px;
-	border: none;
-	font-family: 'Nunito', sans-serif;
-	font-weight: bold;
-`;
-
-export const FormLabel = styled.label`
-	display: flex;
-	flex-direction: column;
-	font-size: 20px;
-	margin: 20px 0;
-`;
-
-export const HighscoreLabel = styled(FormLabel)`
-	margin: 2px;
-`;
-
-export const OrderedList = styled.ol`
-	width: 90%;
-	box-sizing: border-box;
-	font-weight: bold;
-	margin: 30px;
-`;
-
-export const List = styled.li`
-	color: ${beige};
-	border-bottom: 0.2px solid #0b1d34;
-	padding: 15px;
-	font-size: 24px;
-
-	::marker {
-		color: ${red};
-		font-size: 18px;
-	}
-`;
-
 export const TotalScore = styled.span`
 	color: ${lightGreen};
 	float: right;
@@ -264,21 +265,12 @@ export const FirstPlaceScore = styled(TotalScore)`
 	font-size: 24px;
 `;
 
-export const Input = styled.input`
-	border-radius: 20px;
-	width: 272px;
-	height: 90px;
-	border: none;
+export const StyledLink = styled(Link)`
+	color: ${beige};
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 24px;
 	margin: 10px;
-	box-sizing: border-box;
-	padding: 10px;
-	font-size: 26px;
-	background-color: ${beige};
-
-	::placeholder {
-		font-size: 20px;
-		color: #bdb29e;
-	}
 `;
 
 export const Button = styled.button`
@@ -328,12 +320,80 @@ export const SmallButton = styled(Button)`
 	font-size: 27px;
 `;
 
+export const TextButton = styled.button`
+	background-color: ${blue};
+	color: ${beige};
+	font-size: 20px;
+	border: none;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+`;
+
+export const FormLabel = styled.label`
+	display: flex;
+	flex-direction: column;
+	font-size: 20px;
+	margin: 20px 0;
+`;
+
+export const HighscoreLabel = styled(FormLabel)`
+	margin: 2px;
+`;
+
+export const Input = styled.input`
+	border-radius: 20px;
+	width: 272px;
+	height: 90px;
+	border: none;
+	margin: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 26px;
+	background-color: ${beige};
+
+	::placeholder {
+		font-size: 20px;
+		color: #bdb29e;
+	}
+`;
+
+export const OrderedList = styled.ol`
+	width: 90%;
+	box-sizing: border-box;
+	font-weight: bold;
+	margin: 30px;
+
+	@media (min-width: 1024px) {
+		width: 60%;
+	}
+
+`;
+
+export const List = styled.li`
+	color: ${beige};
+	border-bottom: 0.2px solid #0b1d34;
+	padding: 15px;
+	font-size: 24px;
+
+	::marker {
+		color: ${red};
+		font-size: 18px;
+	}
+`;
+
 export const Image = styled.img`
 	width: 75%;
 
 	@media (min-width: 768px) {
 		width: 30%;
 	}
+`;
+
+export const ProfileImage = styled.img`
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
+	border-radius: 50%;
 `;
 
 export const CategoryImage = styled.img`
@@ -349,63 +409,9 @@ export const VehicleImage = styled.img`
 	width: 135px;
 `;
 
-export const VehicleContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-`;
-
-export const Trash = styled.div`
-	background-color: ${blue};
-	color: ${beige};
-	padding: 10px;
-	border-radius: 20px;
-	margin: 4px;
-`;
-
-export const TrashContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-
-	@media (min-width: 768px) {
-		width: 50%;
-		margin: 50px;
-	}
-`;
-
-export const DustbinContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-`;
-
 export const DustbinImage = styled.img`
 	@media (min-width: 768px) {
 		height: 150px;
 		margin: 10px;
 	}
-`;
-
-export const FirstPlaceCirkel = styled.div`
-	width: 110px;
-	height: 110px;
-	border-radius: 50%;
-	background-color: ${red};
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 10px;
-`;
-
-export const FirstPlaceContainer = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
 `;
