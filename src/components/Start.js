@@ -15,6 +15,7 @@ import {
 	DesktopLogin,
 	StartButtonContainer,
 } from 'components/StyledComponents';
+import { HamburgerMenu } from './HamburgerMenu';
 import { fetchQuestions } from 'reducers/game';
 
 export const Start = () => {
@@ -30,6 +31,7 @@ export const Start = () => {
 		<>
 			{isMobileOrTablet && (
 				<Container role="main">
+					<HamburgerMenu />
 					<Image src={Earth_Happy} alt="Happy Earth" />
 					<Title>Klimatspelet</Title>
 					<Paragraph>Superkort information om spelet och klimatet</Paragraph>
@@ -44,6 +46,7 @@ export const Start = () => {
 			)}
 			{isDesktopOrLapTop && (
 				<Container>
+					<HamburgerMenu />
 					<Image src={Earth_Happy} />
 					<DesktopLogin>
 						<Title>Klimatspelet</Title>
