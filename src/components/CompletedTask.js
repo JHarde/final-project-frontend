@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
+import { HamburgerMenu } from './HamburgerMenu';
+
 import {
 	Container,
 	SmallerParagraph,
@@ -10,6 +12,7 @@ import {
 	Image,
 	CompletedTaskButtonContainer,
 } from 'components/StyledComponents';
+
 import Earth_Happy from '../assets/Earth_Happy.svg';
 
 export const CompletedTask = ({ isCorrect, answer, setAnswer, why }) => {
@@ -20,6 +23,7 @@ export const CompletedTask = ({ isCorrect, answer, setAnswer, why }) => {
 		<>
 			{isMobileOrTablet && (
 				<Container>
+					<HamburgerMenu />
 					<Image src={Earth_Happy} />
 
 					{isCorrect && (
@@ -49,6 +53,7 @@ export const CompletedTask = ({ isCorrect, answer, setAnswer, why }) => {
 
 			{isDesktopOrLapTop && (
 				<Container>
+					<HamburgerMenu />
 					<Image src={Earth_Happy} />
 
 					<CompletedTaskButtonContainer>

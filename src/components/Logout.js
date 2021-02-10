@@ -2,8 +2,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { Button, TextButton } from 'components/StyledComponents';
 import { user } from 'reducers/user';
+
+import { Button, TextButton } from 'components/StyledComponents';
 
 export const Logout = ({ button }) => {
 	const history = useHistory();

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import { Login } from 'components/Login';
+import { HamburgerMenu } from './HamburgerMenu';
+
 import {
 	Container,
 	Button,
@@ -7,7 +10,6 @@ import {
 	Input,
 	ErrorParagraph,
 } from 'components/StyledComponents';
-import { Login } from 'components/Login';
 
 export const SignUp = () => {
 	const [username, setUsername] = useState('');
@@ -15,8 +17,9 @@ export const SignUp = () => {
 	const [signUpInfo, setSignUpInfo] = useState('');
 	const [passwordError, setPasswordError] = useState('');
 	const [nameError, setNameError] = useState('');
-	const SIGNUP_URL = 'https://environmental-kids-game.herokuapp.com/users';
 	const [signUpSuccess, setSignUpSuccess] = useState(false);
+
+	const SIGNUP_URL = 'https://environmental-kids-game.herokuapp.com/users';
 
 	const handleSignUpFail = (errorMessage) => {
 		if (errorMessage.code) {
@@ -59,6 +62,7 @@ export const SignUp = () => {
 	if (!signUpSuccess) {
 		return (
 			<Container>
+				<HamburgerMenu />
 				<form>
 					<FormLabel>
 						Välj ett användarnamn:

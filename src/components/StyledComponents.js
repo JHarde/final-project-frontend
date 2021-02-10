@@ -150,6 +150,18 @@ export const DustbinContainer = styled.div`
 	justify-content: center;
 `;
 
+export const MenuContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(242, 237, 228, 0.9);
+	position: absolute;
+	top: 0;
+	width: 100%;
+	min-height: 100vh;
+`;
+
 export const Trash = styled.div`
 	background-color: ${blue};
 	color: ${beige};
@@ -220,6 +232,10 @@ export const HeaderScore = styled.h1`
 	line-height: 90px;
 `;
 
+export const MenuText = styled.h1`
+	font-size: 42px;
+	margin: 20px;
+`;
 
 export const Paragraph = styled.p`
 	text-align: center;
@@ -273,6 +289,15 @@ export const StyledLink = styled(Link)`
 	margin: 10px;
 `;
 
+export const MenuLink = styled(Link)`
+	text-decoration: none;
+	color: #0b1d34;
+
+	&visited {
+		color: #0b1d34;
+	}
+`;
+
 export const Button = styled.button`
 	width: 272px;
 	height: 90px;
@@ -292,11 +317,7 @@ export const GameCategory = styled(Button)`
 	box-sizing: border-box;
 	padding: 5px;
 	background-color: ${(props) =>
-		props.color === 'red' 
-		? red 
-		: props.color === 'beige' 
-		? beige 
-		: lightGreen};
+		props.color === 'red' ? red : props.color === 'beige' ? beige : lightGreen};
 	box-shadow: 3px 5px
 		${(props) =>
 			props.color === 'red'
@@ -327,6 +348,29 @@ export const TextButton = styled.button`
 	border: none;
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
+`;
+
+export const HamburgerButton = styled.button`
+	position: absolute;
+	top: 2%;
+	left: 5%;
+	background-color: transparent;
+	border: none;
+	width: 60px;
+	height: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+
+	div {
+		width: 50px;
+		height: 7px;
+		background-color: #f4a68c;
+		margin: 5px;
+		border-radius: 30px;
+	}
 `;
 
 export const FormLabel = styled.label`
@@ -366,7 +410,6 @@ export const OrderedList = styled.ol`
 	@media (min-width: 1024px) {
 		width: 60%;
 	}
-
 `;
 
 export const List = styled.li`

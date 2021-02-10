@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 
-import Earth_Happy from '../assets/Earth_Happy.svg';
+import { HamburgerMenu } from './HamburgerMenu';
+
+import { fetchQuestions } from 'reducers/game';
 
 import {
 	Container,
@@ -15,8 +17,8 @@ import {
 	DesktopLogin,
 	StartButtonContainer,
 } from 'components/StyledComponents';
-import { HamburgerMenu } from './HamburgerMenu';
-import { fetchQuestions } from 'reducers/game';
+
+import Earth_Happy from '../assets/Earth_Happy.svg';
 
 export const Start = () => {
 	const dispatch = useDispatch();

@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { GameBoard } from 'components/GameBoard';
+import { HamburgerMenu } from './HamburgerMenu';
+
+import { user } from 'reducers/user';
+
 import {
 	Container,
 	Button,
@@ -10,8 +15,6 @@ import {
 	Paragraph,
 	StyledLink,
 } from 'components/StyledComponents';
-import { user } from 'reducers/user';
-import { GameBoard } from 'components/GameBoard';
 
 export const Login = () => {
 	const [username, setUsername] = useState('');
@@ -48,6 +51,7 @@ export const Login = () => {
 	if (!accessToken) {
 		return (
 			<Container>
+				<HamburgerMenu />
 				<form>
 					<FormLabel>
 						Användarnamn

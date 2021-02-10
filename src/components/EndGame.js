@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import { Highscore } from 'components/Highscore';
+import { Logout } from 'components/Logout';
+import { HamburgerMenu } from './HamburgerMenu';
+
 import {
 	Header,
 	EndGameContainer,
@@ -12,8 +16,6 @@ import {
 	ScoreParagraph,
 	ErrorParagraph,
 } from 'components/StyledComponents';
-import { Highscore } from 'components/Highscore';
-import { Logout } from 'components/Logout';
 
 export const EndGame = () => {
 	const guestScore = useSelector((store) => store.game.guestScore);
@@ -23,32 +25,33 @@ export const EndGame = () => {
 
 	const [avatarName, setAvatarName] = useState('');
 	const [isSent, setIsSent] = useState(false);
-	const [errorMessage, setErrorMessage] = useState('')
+	const [errorMessage, setErrorMessage] = useState('');
 
 	const sendScore = (event) => {
 		if (avatarName || accessToken) {
-		fetch('https://environmental-kids-game.herokuapp.com/highscore', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-				name: accessToken ? userName : avatarName,
-				score: accessToken ? score : guestScore,
-			}),
-		})
-			.then((res) => res.json())
-			.then((res) => {
-				console.log(res);
-				setIsSent(true);
-				setErrorMessage('')
-			});
+			fetch('https://environmental-kids-game.herokuapp.com/highscore', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					name: accessToken ? userName : avatarName,
+					score: accessToken ? score : guestScore,
+				}),
+			})
+				.then((res) => res.json())
+				.then((res) => {
+					console.log(res);
+					setIsSent(true);
+					setErrorMessage('');
+				});
 		} else {
-			setErrorMessage('Skriv in ett namn i rutan')
+			setErrorMessage('Skriv in ett namn i rutan');
 		}
 		event.preventDefault();
 	};
 	if (!isSent) {
 		return (
 			<EndGameContainer>
+				<HamburgerMenu />
 				<HeaderScoreContainer>
 					<HeaderScore>{accessToken ? score : guestScore}</HeaderScore>
 					<ScoreParagraph>poäng</ScoreParagraph>
@@ -70,7 +73,6 @@ export const EndGame = () => {
 							/>
 							<ErrorParagraph>{errorMessage}</ErrorParagraph>
 						</HighscoreLabel>
-						
 					)}
 					<Button type="submit" onClick={sendScore} style={{ fontSize: 27 }}>
 						Skicka till topplista

@@ -5,8 +5,11 @@ import arrayMove from 'array-move';
 
 import { Vehicles } from 'components/Vehicles';
 import { CompletedTask } from 'components/CompletedTask';
+import { HamburgerMenu } from '../HamburgerMenu';
+
 import { game } from 'reducers/game';
 import { postScore } from 'reducers/user';
+
 import {
 	TaskContainer,
 	Button,
@@ -62,6 +65,7 @@ export const Task3 = () => {
 		<>
 			{!answer && (
 				<TaskContainer>
+					<HamburgerMenu />
 					<div>
 						<TaskHeader>{question.question}</TaskHeader>
 						<TaskParagraph>

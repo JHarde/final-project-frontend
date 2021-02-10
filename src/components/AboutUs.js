@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { HamburgerMenu } from './HamburgerMenu';
+
 import {
 	ProfileImage,
 	ProfileImageContainer,
@@ -12,6 +14,7 @@ import {
 export const AboutUs = () => {
 	return (
 		<AboutUsContainer>
+			<HamburgerMenu />
 			<PersonContainer>
 				<ProfileImageContainer>
 					<ProfileImage

@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { CompletedTask } from 'components/CompletedTask';
+import { HamburgerMenu } from '../HamburgerMenu';
+
+import { game } from 'reducers/game';
+import { postScore } from 'reducers/user';
+
 import {
 	TaskContainer,
 	TaskButton,
 	TaskHeader,
 	Task1Image,
 } from 'components/StyledComponents';
-import { CompletedTask } from 'components/CompletedTask';
-import { game } from 'reducers/game';
-import { postScore } from 'reducers/user';
 
 import Tandborstning from '../../assets/Tandborstning.svg';
 
@@ -40,6 +43,7 @@ export const Task1 = () => {
 		<>
 			{!answer && (
 				<TaskContainer>
+					<HamburgerMenu />
 					<Task1Image src={Tandborstning} alt="Toothbrush" />
 					<TaskHeader>{question.question}</TaskHeader>
 					{question.answers.map((answer) => {

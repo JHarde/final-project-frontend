@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { HamburgerMenu } from './HamburgerMenu';
+
+import { fetchHighscore } from 'reducers/game';
+
 import {
 	Header,
 	List,
@@ -14,7 +18,6 @@ import {
 	FirstPlaceContainer,
 	HighscoreContainer,
 } from 'components/StyledComponents';
-import { fetchHighscore } from 'reducers/game';
 
 export const Highscore = () => {
 	const dispatch = useDispatch();
@@ -29,6 +32,7 @@ export const Highscore = () => {
 
 	return (
 		<HighscoreContainer>
+			<HamburgerMenu />
 			<FirstPlaceContainer>
 				<FirstPlaceCirkel>
 					<HeaderScore style={{ fontSize: 48 }}>1</HeaderScore>

@@ -2,6 +2,13 @@ import React, { useState, useCallback } from 'react';
 import update from 'immutability-helper';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { CompletedTask } from 'components/CompletedTask';
+import { Box } from 'components/Box';
+import { Dustbin } from 'components/Dustbin';
+
+import { game } from 'reducers/game';
+import { postScore } from 'reducers/user';
+
 import {
 	TaskContainer,
 	TrashContainer,
@@ -10,11 +17,6 @@ import {
 	TaskHeader,
 	TaskParagraph,
 } from 'components/StyledComponents';
-import { CompletedTask } from 'components/CompletedTask';
-import { Box } from 'components/Box';
-import { Dustbin } from 'components/Dustbin';
-import { game } from 'reducers/game';
-import { postScore } from 'reducers/user';
 
 export const DragAndDropContainer = () => {
 	const dispatch = useDispatch();
