@@ -63,7 +63,7 @@ export const AboutUs = () => {
 						verkligen för att kombinera kod och animation för att skapa kreativa
 						lösningar för ett mer humant och hållbart samhälle.
 					</p>
-					<p>
+					<p lang="en">
 						I'm a frontend developer with a background in motion design. I was
 						drawn to programming by the possibility to create more interactive
 						experiences, but the never-ending opportunities to learn and develop
@@ -115,7 +115,7 @@ export const AboutUs = () => {
 						kreativt och samtidigt få använda mig av mina kunskaper kring
 						problemlösning för att hitta nya lösningar.
 					</p>
-					<p>
+					<p lang="en">
 						My journey from working as a kindergarten teacher to becoming a
 						front end developer started about six months ago. In programming I
 						saw an opportunity to develop my creative side and to create
@@ -174,7 +174,7 @@ export const AboutUs = () => {
 						jobba som frontend-developer, men jag har planer att i framtiden bli
 						fullstack.
 					</p>
-					<p>
+					<p lang="en">
 						I have a background as a creative entrepreneur. As an entrepreneur
 						I've learned to tackle obstacles in different ways, and my mindset
 						is that every problem has a solution. I love to create useful things
@@ -186,8 +186,10 @@ export const AboutUs = () => {
 				</ProfileText>
 			</PersonContainer>
 			<CreditsContainer>
-				<a href="https://icons8.com/">Icons on this page is from Icons8</a>
-				<p>
+				<a href="https://icons8.com/" lang="en">
+					Icons on this page is from Icons8
+				</a>
+				<p lang="en">
 					All other content are made by ourselves as a part of the Technigo
 					frontend-bootcamp.
 				</p>
