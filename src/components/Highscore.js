@@ -24,7 +24,7 @@ export const Highscore = () => {
 
 	useEffect(() => {
 		dispatch(fetchHighscore());
-	}, []);
+	}, [dispatch]);
 
 	const highscore = useSelector((store) => store.game.highscore);
 	const slicedHighscore = highscore.slice(1, 6);

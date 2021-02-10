@@ -47,9 +47,9 @@ export const Start = () => {
 				</Container>
 			)}
 			{isDesktopOrLapTop && (
-				<Container>
+				<Container role="main">
 					<HamburgerMenu />
-					<Image src={Earth_Happy} />
+					<Image src={Earth_Happy} alt="Happy Earth" />
 					<DesktopLogin>
 						<Title>Klimatspelet</Title>
 						<Paragraph>Superkort information om spelet och klimatet</Paragraph>

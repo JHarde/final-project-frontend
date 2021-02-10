@@ -92,6 +92,10 @@ export const PersonContainer = styled.section`
 	flex-direction: column;
 	align-items: center;
 	padding: 10px;
+	h1,
+	p {
+		color: ${darkBlue};
+	}
 
 	@media (min-width: 1024px) {
 		width: 30%;
@@ -171,7 +175,7 @@ export const Trash = styled.div`
 `;
 
 export const ProfileText = styled.section`
-	max-width: 600px;
+	max-width: 400px;
 `;
 
 export const DesktopLogin = styled.div`
@@ -199,6 +203,21 @@ export const FirstPlaceContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+`;
+
+export const CreditsContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: ${darkBlue};
+	a {
+		text-decoration: none;
+		color: ${darkBlue};
+		&visited {
+			color: ${blue};
+		}
+	}
 `;
 
 export const Header = styled.h1`

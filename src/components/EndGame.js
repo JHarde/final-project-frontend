@@ -39,7 +39,6 @@ export const EndGame = () => {
 			})
 				.then((res) => res.json())
 				.then((res) => {
-					console.log(res);
 					setIsSent(true);
 					setErrorMessage('');
 				});

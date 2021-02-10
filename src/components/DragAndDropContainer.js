@@ -82,7 +82,7 @@ export const DragAndDropContainer = () => {
 						<TaskHeader>{question.question}</TaskHeader>
 						<TaskParagraph>Lägg skräpet i rätt behållare</TaskParagraph>
 					</div>
-					<TrashContainer style={{ overflow: 'hidden', clear: 'both' }}>
+					<TrashContainer>
 						{boxes.map(({ name, type }, index) => (
 							<Box
 								name={name}
@@ -92,7 +92,7 @@ export const DragAndDropContainer = () => {
 							/>
 						))}
 					</TrashContainer>
-					<DustbinContainer style={{ overflow: 'hidden', clear: 'both' }}>
+					<DustbinContainer>
 						{dustbins.map(({ accepts, lastDroppedItem, image }, index) => (
 							<Dustbin
 								accept={accepts}

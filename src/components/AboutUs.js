@@ -9,6 +9,7 @@ import {
 	PersonContainer,
 	ProfileText,
 	ContactIconsContainer,
+	CreditsContainer,
 } from './StyledComponents';
 
 export const AboutUs = () => {
@@ -55,20 +56,19 @@ export const AboutUs = () => {
 				</ContactIconsContainer>
 				<ProfileText>
 					<p>
-						{' '}
-						Cheese on toast airedale the big cheese. Danish fontina cheesy grin
-						airedale danish fontina taleggio the big cheese macaroni cheese
-						port-salut. Edam fromage lancashire feta caerphilly everyone loves
-						chalk and cheese brie. Red leicester parmesan cheese and biscuits
-						cheesy feet blue castello cheesecake fromage frais smelly cheese.
+						Jag är en frontend utvecklare med bakgrund inom motion design. Jag
+						drogs till programmering där jag såg möjligheten att skapa fler
+						interaktiva upplevelser, samtidigt som det finns oändliga
+						möjligheter att lära och utveckla sig själv. Mitt hjärta slår
+						verkligen för att kombinera kod och animation för att skapa kreativa
+						lösningar för ett mer humant och hållbart samhälle.
 					</p>
 					<p>
-						{' '}
-						Cheese on toast airedale the big cheese. Danish fontina cheesy grin
-						airedale danish fontina taleggio the big cheese macaroni cheese
-						port-salut. Edam fromage lancashire feta caerphilly everyone loves
-						chalk and cheese brie. Red leicester parmesan cheese and biscuits
-						cheesy feet blue castello cheesecake fromage frais smelly cheese.
+						I'm a frontend developer with a background in motion design. I was
+						drawn to programming by the possibility to create more interactive
+						experiences, but the never-ending opportunities to learn and develop
+						is a clear bonus. My heart especially beats for combining code and
+						animation to create solutions for a more human, sustainable society!
 					</p>
 				</ProfileText>
 			</PersonContainer>
@@ -185,14 +185,23 @@ export const AboutUs = () => {
 					</p>
 				</ProfileText>
 			</PersonContainer>
-			<div>
-				<a href="https://icons8.com/icon/13930/linkedin">
-					LinkedIn icon by Icons8
+			<CreditsContainer>
+				<a href="https://icons8.com/">Icons on this page is from Icons8</a>
+				<p>
+					All other content are made by ourselves as a part of the Technigo
+					frontend-bootcamp.
+				</p>
+				<p>Källförteckning:</p>
+				<a href="https://sydvatten.se/hur-anvander-du-vatten-klokt/">
+					Sydvatten.se
 				</a>
-				<a href="https://icons8.com/icon/AZOZNnY73haj/github">
-					GitHub icon by Icons8
+				<a href="https://www.trafikverket.se/for-dig-i-branschen/miljo---for-dig-i-branschen/energi-och-klimat/jamfor-trafikslag/">
+					Trafikverket.se
 				</a>
-			</div>
+				<a href="https://www.naturvardsverket.se/Miljoarbete-i-samhallet/Miljoarbete-i-Sverige/Uppdelat-efter-omrade/Klimat/minska-min-klimatpaverkan/">
+					Naturvårdsverket.se
+				</a>
+			</CreditsContainer>
 		</AboutUsContainer>
 	);
 };
