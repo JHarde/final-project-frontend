@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CompletedTask } from 'components/CompletedTask';
 import { Box } from 'components/Box';
 import { Dustbin } from 'components/Dustbin';
+import { HamburgerMenu } from 'components/HamburgerMenu';
 
 import { game } from 'reducers/game';
 import { postScore } from 'reducers/user';
@@ -76,6 +77,7 @@ export const DragAndDropContainer = () => {
 		<>
 			{!answer && (
 				<TaskContainer>
+					<HamburgerMenu />
 					<div>
 						<TaskHeader>{question.question}</TaskHeader>
 						<TaskParagraph>Lägg skräpet i rätt behållare</TaskParagraph>
