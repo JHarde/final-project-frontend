@@ -270,6 +270,7 @@ export const TaskParagraph = styled(Paragraph)`
 export const SmallerParagraph = styled(Paragraph)`
 	font-size: 20px;
 	margin-top: 0;
+	max-width: 400px;
 `;
 
 export const ScoreParagraph = styled.span`
