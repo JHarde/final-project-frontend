@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
+import lottie from  'lottie-web'
+
+import animationData from '../lotties/Earth_Happy_loop.json'
 
 import { HamburgerMenu } from './HamburgerMenu';
 
@@ -29,6 +32,14 @@ export const Start = () => {
 	const isDesktopOrLapTop = useMediaQuery({ query: '(min-width: 769px)' });
 	const isMobileOrTablet = useMediaQuery({ query: '(max-width: 768px)' });
 
+	lottie.loadAnimation({
+		container: this.animBox,
+		renderer: 'svg',
+		loop: true,
+		autoplay: true,
+		animationData: animationData
+	});
+
 	return (
 		<>
 			{isMobileOrTablet && (
@@ -49,7 +60,11 @@ export const Start = () => {
 			{isDesktopOrLapTop && (
 				<Container role="main">
 					<HamburgerMenu />
-					<Image src={Earth_Happy} alt="Happy Earth" />
+					<div 
+						style={{width: 200, height: 200}}
+						ref={ref => this.animBox = ref}>
+					</div>
+					{/* <Image src={Earth_Happy} alt="Happy Earth" /> */}
 					<DesktopLogin>
 						<Title>Klimatspelet</Title>
 						<Paragraph>Superkort information om spelet och klimatet</Paragraph>
