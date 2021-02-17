@@ -23,6 +23,7 @@ export const Task3 = () => {
 
 	const guestScore = useSelector((store) => store.game.guestScore);
 	const question = useSelector((store) => store.game.questions[1]);
+	const completedTasks = useSelector((store) => store.game.completedTasks)
 	const userId = useSelector((store) => store.user.userId);
 	const accessToken = useSelector((store) => store.user.accessToken);
 	const [answer, setAnswer] = useState();
@@ -52,8 +53,9 @@ export const Task3 = () => {
 			setIsCorrect(true);
 			if (accessToken) {
 				dispatch(postScore(userId, 1));
-			} else {
+			} else if(!completedTasks.includes("Task3")){
 				dispatch(game.actions.setGuestScore(guestScore + 1));
+				dispatch(game.actions.setCompletedTasks("Task3"));
 			}
 		} else {
 			setIsCorrect(false);

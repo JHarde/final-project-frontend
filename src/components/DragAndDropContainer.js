@@ -22,13 +22,13 @@ import {
 export const DragAndDropContainer = () => {
 	const dispatch = useDispatch();
 	const question = useSelector((store) => store.game.questions[2]);
+	const completedTasks = useSelector((store) => store.game.completedTasks)
+	const guestScore = useSelector((store) => store.game.guestScore);
 	const accessToken = useSelector((store) => store.user.accessToken);
 	const userId = useSelector((store) => store.user.userId);
 
 	const trash = question.answers;
 	const trashcans = question.correctAnswer;
-
-	const guestScore = useSelector((store) => store.game.guestScore);
 
 	const [answer, setAnswer] = useState();
 	const [isCorrect, setIsCorrect] = useState(false);
@@ -64,8 +64,9 @@ export const DragAndDropContainer = () => {
 			setIsCorrect(true);
 			if (accessToken) {
 				dispatch(postScore(userId, 1));
-			} else {
+			} else if (!completedTasks.includes("Task2")){
 				dispatch(game.actions.setGuestScore(guestScore + 1));
+				dispatch(game.actions.setCompletedTasks("Task2"));
 			}
 		} else {
 			setIsCorrect(false);

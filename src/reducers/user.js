@@ -5,6 +5,7 @@ const initialState = {
 	userId: localStorage.userId || 0,
 	score: localStorage.score || 0,
 	userName: localStorage.userName || '',
+	completedTasks: localStorage.completedTasks || [],
 };
 
 export const user = createSlice({
