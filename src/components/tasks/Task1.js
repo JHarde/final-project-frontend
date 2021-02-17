@@ -31,7 +31,7 @@ export const Task1 = () => {
 		if (answer === question.correctAnswer[0]) {
 			setIsCorrect(true);
 			if (accessToken && !userCompletedTasks.includes("Task1")) {
-				dispatch(postScore(userId, 1));
+				dispatch(postScore(userId, 1, "Task1"));
 			} else if (!guestCompletedTasks.includes("Task1")){
 				dispatch(game.actions.setGuestScore(guestScore + 1));
 				dispatch(game.actions.setCompletedTasks("Task1"));
