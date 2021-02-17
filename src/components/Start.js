@@ -31,7 +31,7 @@ export const Start = () => {
 			<Image src={Earth_Happy} alt="Happy Earth" />
 			<DesktopLogin>
 				<Title>Klimatspelet</Title>
-				<Paragraph>Superkort information om spelet och klimatet</Paragraph>
+				<Paragraph>Ett litet spel om klimat och miljö</Paragraph>
 				<StartButtonContainer>
 					<Link to="/login">
 						<Button>Logga in</Button>
