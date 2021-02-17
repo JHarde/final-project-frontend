@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import "@lottiefiles/lottie-player";
+import lottiePlayer from '@lottiefiles/lottie-player';
+
 
 const blue = '#223A59';
 const darkBlue = '#0B1D34';
@@ -174,6 +177,7 @@ export const MenuContainer = styled.div`
 	top: 0;
 	width: 100%;
 	min-height: 100vh;
+	z-index: 1;
 `;
 
 export const Trash = styled.div`
@@ -195,6 +199,11 @@ export const DesktopLogin = styled.div`
 	align-items: center;
 	padding: 50px;
 	margin: 100px;
+
+	@media (max-width: 768px) {
+		margin: 0;
+		padding-top: 0;
+	}
 `;
 
 export const FirstPlaceCirkel = styled.div`
@@ -392,7 +401,7 @@ export const HamburgerButton = styled.button`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
+	z-index: 2;
 
 	div {
 		width: 50px;
@@ -486,5 +495,16 @@ export const DustbinImage = styled.img`
 	@media (min-width: 768px) {
 		height: 150px;
 		margin: 10px;
+	}
+`;
+
+export const LottieContainer = styled.div`
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	z-index: 0;
+
+	@media (min-width: 768px) {
+		width: 50%;
 	}
 `;
