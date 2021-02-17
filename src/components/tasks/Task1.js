@@ -21,7 +21,7 @@ export const Task1 = () => {
 	const question = useSelector((store) => store.game.questions[0]);
 	const guestScore = useSelector((store) => store.game.guestScore);
 	const guestCompletedTasks = useSelector((store) => store.game.completedTasks)
-	const userCompletedTasks = useSelector((store) => store.game.completedTasks)
+	const userCompletedTasks = useSelector((store) => store.user.completedTasks)
 	const accessToken = useSelector((store) => store.user.accessToken);
 	const userId = useSelector((store) => store.user.userId);
 	const [answer, setAnswer] = useState();

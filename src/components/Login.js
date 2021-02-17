@@ -29,6 +29,7 @@ export const Login = () => {
 		dispatch(user.actions.setUserId(userInfo));
 		dispatch(user.actions.setScore(userInfo));
 		dispatch(user.actions.setUserName(userInfo));
+		dispatch(user.actions.setCompletedTasks(userInfo.completedTasks));
 	};
 
 	const handleLogIn = (event) => {

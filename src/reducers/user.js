@@ -18,7 +18,7 @@ export const user = createSlice({
 			localStorage.setItem('accessToken', accessToken);
 		},
 		setScore: (store, action) => {
-			const { score } = action.payload;
+			const {score}  = action.payload;
 			store.score = score;
 			localStorage.setItem('score', score);
 		},
@@ -58,7 +58,7 @@ export const postScore = (userId, scoreNumber, task) => {
 		})
 			.then((res) => res.json())
 			.then((scoreResponse) => {
-				dispatch(user.actions.setScore(scoreResponse.score));
+				dispatch(user.actions.setScore(scoreResponse));
 				dispatch(user.actions.setCompletedTasks(scoreResponse.completedTasks));
 			});
 	};
