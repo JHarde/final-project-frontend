@@ -20,68 +20,34 @@ export const CompletedTask = ({ isCorrect, answer, setAnswer, why }) => {
 	const isMobileOrTablet = useMediaQuery({ query: '(max-width: 768px)' });
 
 	return (
-		<>
-			{isMobileOrTablet && (
-				<Container>
-					<HamburgerMenu />
-					<Image src={Earth_Happy} />
+		<Container>
+			<HamburgerMenu />
+			<Image src={Earth_Happy} />
 
-					{isCorrect && (
-						<>
-							<Header>Bra jobbat!</Header>
-							<SmallerParagraph>{why}</SmallerParagraph>
-						</>
-					)}
+			<CompletedTaskButtonContainer>
+				{isCorrect && (
+					<>
+						<Header>Bra jobbat!</Header>
+						<SmallerParagraph>{why}</SmallerParagraph>
+					</>
+				)}
 
-					{!isCorrect && (
-						<>
-							<Header>Försök igen</Header>
-							<Button color="red" onClick={() => setAnswer('')}>
-								Försök igen
-							</Button>
-						</>
-					)}
+				{!isCorrect && (
+					<>
+						<Header>Försök igen</Header>
+						<Button color="red" onClick={() => setAnswer('')}>
+							Försök igen
+						</Button>
+					</>
+				)}
 
-					<Link to="/gameboard">
-						<Button>Fortsätt spela</Button>
-					</Link>
-					<Link to="/endgame">
-						<Button color="red">Sluta spela</Button>
-					</Link>
-				</Container>
-			)}
-
-			{isDesktopOrLapTop && (
-				<Container>
-					<HamburgerMenu />
-					<Image src={Earth_Happy} />
-
-					<CompletedTaskButtonContainer>
-						{isCorrect && (
-							<>
-								<Header>Bra jobbat!</Header>
-								<SmallerParagraph>{why}</SmallerParagraph>
-							</>
-						)}
-
-						{!isCorrect && (
-							<>
-								<Header>Försök igen</Header>
-								<Button color="red" onClick={() => setAnswer('')}>
-									Försök igen
-								</Button>
-							</>
-						)}
-
-						<Link to="/gameboard">
-							<Button>Fortsätt spela</Button>
-						</Link>
-						<Link to="/endgame">
-							<Button color="red">Sluta spela</Button>
-						</Link>
-					</CompletedTaskButtonContainer>
-				</Container>
-			)}
-		</>
+				<Link to="/gameboard">
+					<Button>Fortsätt spela</Button>
+				</Link>
+				<Link to="/endgame">
+					<Button color="red">Sluta spela</Button>
+				</Link>
+			</CompletedTaskButtonContainer>
+		</Container>
 	);
 };
