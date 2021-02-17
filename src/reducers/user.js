@@ -32,6 +32,11 @@ export const user = createSlice({
 			store.userName = userName;
 			localStorage.setItem('userName', userName);
 		},
+		setCompletedTasks: (store, action) => {
+			const completedTasks = action.payload;
+			store.completedTasks = completedTasks;
+			localStorage.setItem('completedTask', completedTasks)
+		},
 		logOut: (store, action) => {
 			store.userId = 0;
 			store.accessToken = null;
@@ -44,16 +49,17 @@ export const user = createSlice({
 	},
 });
 
-export const postScore = (userId, scoreNumber) => {
+export const postScore = (userId, scoreNumber, task) => {
 	return (dispatch) => {
 		fetch('https://environmental-kids-game.herokuapp.com/userscore', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ userId: userId, scoreNumber: scoreNumber }),
+			body: JSON.stringify({ userId: userId, scoreNumber: scoreNumber, task: task }),
 		})
 			.then((res) => res.json())
-			.then((score) => {
-				dispatch(user.actions.setScore(score));
+			.then((scoreResponse) => {
+				dispatch(user.actions.setScore(scoreResponse.score));
+				dispatch(user.actions.setCompletedTasks(scoreResponse.completedTasks));
 			});
 	};
 };
