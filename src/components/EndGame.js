@@ -29,7 +29,7 @@ export const EndGame = () => {
 
 	const sendScore = (event) => {
 		if (avatarName || accessToken) {
-			fetch('http://localhost:8080/highscore', {
+			fetch('https://environmental-kids-game.herokuapp.com/highscore', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
