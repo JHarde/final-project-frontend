@@ -80,6 +80,16 @@ export const StartButtonContainer = styled.div`
 	}
 `;
 
+export const GameButtonContainer = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 1024px) {
+		flex-direction: row;
+	}
+`;
+
 export const ContactIconsContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
