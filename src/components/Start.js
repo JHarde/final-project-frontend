@@ -12,14 +12,11 @@ import {
 	Button,
 	Title,
 	Paragraph,
-	Image,
 	StyledLink,
 	DesktopLogin,
 	StartButtonContainer,
 	LottieContainer
 } from 'components/StyledComponents';
-
-import Earth_Happy from '../assets/Earth_Happy.svg';
 
 export const Start = () => {
 	const dispatch = useDispatch();
@@ -30,7 +27,6 @@ export const Start = () => {
 	return (
 		<Container role="main">
 			<HamburgerMenu />
-			{/* <Image src={Earth_Happy} alt="Happy Earth" /> */}
 			<LottieContainer>
 				<lottie-player
 					autoplay
