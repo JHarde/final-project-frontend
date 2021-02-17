@@ -23,8 +23,10 @@ export const Task3 = () => {
 
 	const guestScore = useSelector((store) => store.game.guestScore);
 	const question = useSelector((store) => store.game.questions[1]);
+	const guestCompletedTasks = useSelector((store) => store.game.completedTasks);
 	const userId = useSelector((store) => store.user.userId);
 	const accessToken = useSelector((store) => store.user.accessToken);
+	const userCompletedTasks = useSelector((store) => store.user.completedTasks);
 	const [answer, setAnswer] = useState();
 	const [isCorrect, setIsCorrect] = useState(false);
 
@@ -50,10 +52,11 @@ export const Task3 = () => {
 
 		if (equals(vehicle, correctAnswersArray)) {
 			setIsCorrect(true);
-			if (accessToken) {
-				dispatch(postScore(userId, 1));
-			} else {
+			if (accessToken && !userCompletedTasks.includes("Task3")) {
+				dispatch(postScore(userId, 1, "Task3"));
+			} else if(!guestCompletedTasks.includes("Task3")){
 				dispatch(game.actions.setGuestScore(guestScore + 1));
+				dispatch(game.actions.setCompletedTasks("Task3"));
 			}
 		} else {
 			setIsCorrect(false);

@@ -5,7 +5,7 @@ import { CompletedTask } from 'components/CompletedTask';
 import { HamburgerMenu } from '../HamburgerMenu';
 
 import { game } from 'reducers/game';
-import { postScore } from 'reducers/user';
+import { user, postScore } from 'reducers/user';
 
 import {
 	TaskContainer,
@@ -20,6 +20,8 @@ export const Task1 = () => {
 	const dispatch = useDispatch();
 	const question = useSelector((store) => store.game.questions[0]);
 	const guestScore = useSelector((store) => store.game.guestScore);
+	const guestCompletedTasks = useSelector((store) => store.game.completedTasks)
+	const userCompletedTasks = useSelector((store) => store.user.completedTasks)
 	const accessToken = useSelector((store) => store.user.accessToken);
 	const userId = useSelector((store) => store.user.userId);
 	const [answer, setAnswer] = useState();
@@ -28,10 +30,11 @@ export const Task1 = () => {
 	const handleOnClick = (answer) => {
 		if (answer === question.correctAnswer[0]) {
 			setIsCorrect(true);
-			if (accessToken) {
-				dispatch(postScore(userId, 1));
-			} else {
+			if (accessToken && !userCompletedTasks.includes("Task1")) {
+				dispatch(postScore(userId, 1, "Task1"));
+			} else if (!guestCompletedTasks.includes("Task1")){
 				dispatch(game.actions.setGuestScore(guestScore + 1));
+				dispatch(game.actions.setCompletedTasks("Task1"));
 			}
 		} else {
 			setIsCorrect(false);

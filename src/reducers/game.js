@@ -4,6 +4,7 @@ const initialState = {
 	highscore: [],
 	questions: JSON.parse(localStorage.getItem('questions')) || [],
 	guestScore: 0,
+	completedTasks: [],
 };
 
 export const game = createSlice({
@@ -16,13 +17,17 @@ export const game = createSlice({
 
 		setQuestions: (store, action) => {
 			store.questions = action.payload;
-
 			localStorage.setItem('questions', JSON.stringify(store.questions));
 		},
 
 		setGuestScore: (store, action) => {
 			store.guestScore = action.payload;
 		},
+
+		setCompletedTasks: (store, action) => {
+			const task = action.payload;
+			store.completedTasks = [...store.completedTasks,task]
+		}
 	},
 });
 
