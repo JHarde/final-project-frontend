@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useMediaQuery } from 'react-responsive';
 
-import { Logout } from 'components/Logout';
 import { HamburgerMenu } from './HamburgerMenu';
 
 import { fetchQuestions } from 'reducers/game';
