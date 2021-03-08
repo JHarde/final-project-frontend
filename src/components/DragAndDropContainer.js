@@ -22,13 +22,15 @@ import {
 export const DragAndDropContainer = () => {
 	const dispatch = useDispatch();
 	const question = useSelector((store) => store.game.questions[2]);
+	const guestCompletedTasks = useSelector((store) => store.game.completedTasks)
+	const guestScore = useSelector((store) => store.game.guestScore);
 	const accessToken = useSelector((store) => store.user.accessToken);
 	const userId = useSelector((store) => store.user.userId);
+	const userCompletedTasks = useSelector((store) => store.user.completedTasks)
+
 
 	const trash = question.answers;
 	const trashcans = question.correctAnswer;
-
-	const guestScore = useSelector((store) => store.game.guestScore);
 
 	const [answer, setAnswer] = useState();
 	const [isCorrect, setIsCorrect] = useState(false);
@@ -62,10 +64,11 @@ export const DragAndDropContainer = () => {
 	const handleOnClick = () => {
 		if (droppedBoxNames.length === 10) {
 			setIsCorrect(true);
-			if (accessToken) {
-				dispatch(postScore(userId, 1));
-			} else {
+			if (accessToken && !userCompletedTasks.includes("Task2")) {
+				dispatch(postScore(userId, 1, "Task2"));
+			} else if (!guestCompletedTasks.includes("Task2")){
 				dispatch(game.actions.setGuestScore(guestScore + 1));
+				dispatch(game.actions.setCompletedTasks("Task2"));
 			}
 		} else {
 			setIsCorrect(false);
