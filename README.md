@@ -11,7 +11,7 @@ A game built in React aimed towards children to create awarness of and interest 
 ## Process
 
 We set the basic structure and sketch of MVP in Figma before starting to code. This helped us to know where to start and made it easier to divide the tasks.
-We worked in branches and merged when needed without any major issues. This also helped in making the process smooth and made it possible to work on different tasks at the same time. We used React and Redux as a base for the frontend and Node.js and express for the backend.
+We worked in branches and merged when needed without any major issues. This also helped in making the process smooth and made it possible to work on different tasks at the same time. We used React and Redux as a base for the frontend and Node.js and express for the backend
 
 ### Frontend
 
